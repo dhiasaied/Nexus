@@ -1,0 +1,708 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><title>NEXUS Humanoid Robotics</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"secondary-container":"#46494d","tertiary-fixed-dim":"#7bd0ff","error-container":"#93000a","on-primary-fixed-variant":"#004f54","on-surface-variant":"#b9cacb","surface-tint":"#00dbe9","surface-container":"#1d2025","on-secondary":"#2d3135","primary-fixed-dim":"#00dbe9","surface-container-low":"#191c21","on-tertiary":"#00354a","surface-container-highest":"#33353b","on-error-container":"#ffdad6","surface-variant":"#33353b","tertiary-fixed":"#c4e7ff","primary-fixed":"#7df4ff","tertiary":"#eef7ff","background":"#111319","outline":"#849495","on-primary-container":"#006970","inverse-primary":"#006970","inverse-on-surface":"#2e3036","on-tertiary-container":"#00668b","on-tertiary-fixed-variant":"#004c69","secondary-fixed-dim":"#c4c6cb","primary":"#dbfcff","inverse-surface":"#e2e2ea","surface-dim":"#111319","tertiary-container":"#aee0ff","on-secondary-fixed-variant":"#44474b","on-surface":"#e2e2ea","secondary":"#c4c6cb","surface-container-high":"#282a30","on-background":"#e2e2ea","on-primary-fixed":"#002022","outline-variant":"#3b494b","surface-container-lowest":"#0c0e13","on-error":"#690005","surface":"#111319","on-secondary-fixed":"#181c20","surface-bright":"#37393f","error":"#ffb4ab","secondary-fixed":"#e0e2e7","on-secondary-container":"#b6b8bd","on-tertiary-fixed":"#001e2c","on-primary":"#00363a","primary-container":"#00f0ff"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"margin":"2rem","gutter":"1.25rem","space-sm":"0.5rem","space-xl":"3rem","space-md":"1rem","space-lg":"1.5rem","space-xs":"0.25rem"},fontFamily:{"label-lg":["JetBrains Mono"],"display-xl":["Space Grotesk"],"body-sm":["Manrope"],"body-md":["Manrope"],"label-sm":["JetBrains Mono"],"headline-md":["Space Grotesk"],"headline-lg":["Space Grotesk"],"label-md":["JetBrains Mono"],"headline-sm":["Space Grotesk"],"headline-lg-mobile":["Space Grotesk"],"display-xl-mobile":["Space Grotesk"],"body-lg":["Manrope"]},fontSize:{"label-lg":["13px",{"lineHeight":"18px","fontWeight":"500"}],"display-xl":["64px",{"lineHeight":"72px","fontWeight":"700"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}],"label-sm":["9px",{"lineHeight":"12px","fontWeight":"500"}],"headline-md":["28px",{"lineHeight":"36px","fontWeight":"500"}],"headline-lg":["40px",{"lineHeight":"48px","fontWeight":"600"}],"label-md":["11px",{"lineHeight":"16px","fontWeight":"500"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"500"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","fontWeight":"600"}],"display-xl-mobile":["38px",{"lineHeight":"46px","fontWeight":"700"}],"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}]}}}};</script><link rel="stylesheet" href="assets/css/animations.css"></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary"><header class="fixed top-0 left-0 right-0 z-50 w-full backdrop-blur-md bg-surface-container-lowest/85 border-b border-white/10"><div class="h-20 w-full px-margin flex items-center justify-between"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm" data-path="home" href="index.html"><img alt="NEXUS Humanoid Robotics Logo" class="h-8 w-auto object-contain nx-logo-mark" src="assets/img/nexus-logo.svg"><span class="font-headline-sm text-headline-sm uppercase tracking-wider text-on-surface hidden sm:inline-block">NEXUS</span></a></div><nav class="hidden xl:flex items-center gap-space-xl" data-active-classes="text-primary-container border-b-2 border-primary-container"><a aria-current="page" class="font-label-lg tracking-widest uppercase transition-colors py-space-sm text-primary-container border-b-2 border-primary-container" data-path="home" href="index.html">Home</a><a class="font-label-lg text-label-lg tracking-widest uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-sm" data-path="about" href="index.html#about">About</a><a class="font-label-lg text-label-lg tracking-widest uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-sm" data-path="robots" href="Robot.html">Robots</a><a class="font-label-lg text-label-lg tracking-widest uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-sm" data-path="technology" href="technology.html">Technology</a><a class="font-label-lg text-label-lg tracking-widest uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-sm" data-path="applications" href="index.html#applications">Applications</a><a class="font-label-lg text-label-lg tracking-widest uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-sm" data-path="shop" href="Shop.html">Shop</a></nav><div class="flex items-center gap-space-md"><button aria-label="Notifications" class="relative p-space-xs text-on-surface-variant hover:text-on-surface transition-colors flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary-container shadow-[0_0_8px_#00f0ff]"></span></button><a aria-label="Cart" href="Shop.html" class="relative p-space-xs text-on-surface-variant hover:text-on-surface transition-colors flex items-center justify-center"><span class="material-symbols-outlined text-[22px]">shopping_bag</span><span class="absolute -top-1 -right-1 font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-surface-container-highest text-primary-container border border-primary-container/40 leading-none">0</span></a><a class="flex items-center gap-space-xs px-space-md py-1.5 rounded-full border border-outline-variant bg-surface-container/60 hover:border-primary-container hover:bg-surface-container-high transition-all text-on-surface group" data-path="login" href="login.html"><span class="material-symbols-outlined text-[18px] text-primary-container group-hover:scale-105 transition-transform">terminal</span><span class="font-label-md text-label-md uppercase tracking-wider text-on-surface">Login</span></a><a href="login.html" aria-label="Account" class="w-8 h-8 rounded-full bg-primary flex items-center justify-center hover:scale-105 transition-transform"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></a></div></div></header><main class="w-full pt-20 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- 1. HERO SECTION WITH 3D INTERACTION & ROBOT SELECTOR -->
+<section class="relative w-full min-h-[920px] -mt-20 pt-24 pb-space-xl flex flex-col justify-between overflow-hidden bg-surface-container-lowest">
+<!-- Ambient Structural Grid and Glows -->
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_20%,rgba(0,240,255,0.07)_0%,transparent_65%)] pointer-events-none"></div>
+<div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:48px_48px] pointer-events-none opacity-40"></div>
+<!-- Embedded ThreeJS Interactive 3D Model -->
+<!-- STITCH_THREEJS_START:ANIMATION_5 class="absolute inset-0 w-full h-[850px] bg-transparent pointer-events-auto z-0" -->
+<div class="absolute inset-0 w-full h-[850px] bg-transparent pointer-events-auto z-0" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_5" style="width:100%;height:100%"><canvas width="1600" height="1062" style="display: block; width: 1280px; height: 850px;"></canvas></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_5');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  // Three.js Interactive Humanoid Robot & Holographic Cyber Environment
+const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+
+const scene = new THREE.Scene();
+scene.fog = new THREE.FogExp2(0x07090e, 0.035);
+
+const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
+camera.position.set(0, 1.2, 5.2);
+
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(width, height);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.shadowMap.enabled = true;
+container.appendChild(renderer.domElement);
+
+// Lighting
+const ambientLight = new THREE.AmbientLight(0x223344, 1.5);
+scene.add(ambientLight);
+
+const dirLight = new THREE.DirectionalLight(0xffffff, 2.5);
+dirLight.position.set(3, 5, 4);
+scene.add(dirLight);
+
+const cyanRimLight = new THREE.DirectionalLight(0x00f0ff, 3.5);
+cyanRimLight.position.set(-4, 3, -3);
+scene.add(cyanRimLight);
+
+const blueFillLight = new THREE.PointLight(0x0066ff, 3, 10);
+blueFillLight.position.set(0, -1, 2);
+scene.add(blueFillLight);
+
+// Robot Hierarchy
+const robotGroup = new THREE.Group();
+scene.add(robotGroup);
+
+// Materials
+const whiteArmorMat = new THREE.MeshPhongMaterial({
+  color: 0xf5f7fa,
+  shininess: 90,
+  specular: 0x88bbff
+});
+
+const blackCarbonMat = new THREE.MeshPhongMaterial({
+  color: 0x0f1115,
+  shininess: 100,
+  specular: 0x334455
+});
+
+const cyanGlowMat = new THREE.MeshBasicMaterial({
+  color: 0x00f0ff
+});
+
+// Head & Visor
+const headGroup = new THREE.Group();
+headGroup.position.y = 1.65;
+const craniumGeo = new THREE.SphereGeometry(0.24, 32, 24);
+craniumGeo.scale(0.85, 1.15, 0.95);
+const cranium = new THREE.Mesh(craniumGeo, blackCarbonMat);
+headGroup.add(cranium);
+
+// Visor light ring
+const visorRingGeo = new THREE.TorusGeometry(0.2, 0.012, 16, 40, Math.PI * 1.1);
+visorRingGeo.rotateZ(Math.PI / 2);
+visorRingGeo.rotateX(-0.1);
+const visorRing = new THREE.Mesh(visorRingGeo, cyanGlowMat);
+visorRing.position.set(0, 0.02, 0.12);
+headGroup.add(visorRing);
+
+// Torso / Chest (Optimus aesthetic)
+const torsoGroup = new THREE.Group();
+torsoGroup.position.y = 1.15;
+
+const chestPlateGeo = new THREE.CylinderGeometry(0.38, 0.30, 0.55, 6);
+chestPlateGeo.scale(1.15, 1, 0.65);
+const chestPlate = new THREE.Mesh(chestPlateGeo, whiteArmorMat);
+torsoGroup.add(chestPlate);
+
+const spineCoreGeo = new THREE.CylinderGeometry(0.18, 0.16, 0.58, 16);
+const spineCore = new THREE.Mesh(spineCoreGeo, blackCarbonMat);
+spineCore.position.set(0, -0.05, -0.05);
+torsoGroup.add(spineCore);
+
+// Abdomen & Pelvis
+const pelvisGeo = new THREE.BoxGeometry(0.44, 0.22, 0.26);
+const pelvis = new THREE.Mesh(pelvisGeo, blackCarbonMat);
+pelvis.position.y = 0.72;
+robotGroup.add(pelvis);
+
+// Shoulders & Arms
+function createArm(side) {
+  const arm = new THREE.Group();
+  arm.position.set(side * 0.44, 1.35, 0);
+
+  const shoulderCapGeo = new THREE.SphereGeometry(0.14, 20, 20);
+  shoulderCapGeo.scale(1.2, 1.4, 1.1);
+  const shoulderCap = new THREE.Mesh(shoulderCapGeo, whiteArmorMat);
+  arm.add(shoulderCap);
+
+  const bicepGeo = new THREE.CylinderGeometry(0.09, 0.08, 0.38, 16);
+  const bicep = new THREE.Mesh(bicepGeo, whiteArmorMat);
+  bicep.position.y = -0.26;
+  arm.add(bicep);
+
+  const forearmGeo = new THREE.CylinderGeometry(0.075, 0.065, 0.36, 16);
+  const forearm = new THREE.Mesh(forearmGeo, blackCarbonMat);
+  forearm.position.y = -0.62;
+  arm.add(forearm);
+
+  const handGeo = new THREE.BoxGeometry(0.08, 0.12, 0.04);
+  const hand = new THREE.Mesh(handGeo, blackCarbonMat);
+  hand.position.y = -0.84;
+  arm.add(hand);
+
+  return arm;
+}
+
+const leftArm = createArm(-1);
+const rightArm = createArm(1);
+
+// Legs
+function createLeg(side) {
+  const leg = new THREE.Group();
+  leg.position.set(side * 0.2, 0.65, 0);
+
+  const thighGeo = new THREE.CylinderGeometry(0.12, 0.1, 0.5, 16);
+  const thigh = new THREE.Mesh(thighGeo, whiteArmorMat);
+  thigh.position.y = -0.28;
+  leg.add(thigh);
+
+  const shinGeo = new THREE.CylinderGeometry(0.09, 0.07, 0.52, 16);
+  const shin = new THREE.Mesh(shinGeo, whiteArmorMat);
+  shin.position.y = -0.78;
+  leg.add(shin);
+
+  const footGeo = new THREE.BoxGeometry(0.12, 0.08, 0.28);
+  const foot = new THREE.Mesh(footGeo, blackCarbonMat);
+  foot.position.set(0, -1.08, 0.06);
+  leg.add(foot);
+
+  return leg;
+}
+
+const leftLeg = createLeg(-1);
+const rightLeg = createLeg(1);
+
+robotGroup.add(headGroup);
+robotGroup.add(torsoGroup);
+robotGroup.add(leftArm);
+robotGroup.add(rightArm);
+robotGroup.add(leftLeg);
+robotGroup.add(rightLeg);
+
+// Pedestal Hologram Platform
+const platformGeo = new THREE.CylinderGeometry(1.6, 1.8, 0.12, 48);
+const platformMat = new THREE.MeshPhongMaterial({ color: 0x0b1019, shininess: 80 });
+const platform = new THREE.Mesh(platformGeo, platformMat);
+platform.position.y = -0.48;
+scene.add(platform);
+
+const platformRingGeo = new THREE.RingGeometry(1.5, 1.58, 64);
+platformRingGeo.rotateX(-Math.PI / 2);
+const platformRing = new THREE.Mesh(platformRingGeo, cyanGlowMat);
+platformRing.position.y = -0.41;
+scene.add(platformRing);
+
+// Ambient Floating Tech Particles
+const particlesCount = 280;
+const particleGeo = new THREE.BufferGeometry();
+const particlePos = new Float32Array(particlesCount * 3);
+for (let i = 0; i < particlesCount * 3; i += 3) {
+  particlePos[i] = (Math.random() - 0.5) * 8;
+  particlePos[i + 1] = Math.random() * 4 - 0.5;
+  particlePos[i + 2] = (Math.random() - 0.5) * 8;
+}
+particleGeo.setAttribute('position', new THREE.BufferAttribute(particlePos, 3));
+const particleMat = new THREE.PointsMaterial({
+  color: 0x00f0ff,
+  size: 0.025,
+  transparent: true,
+  opacity: 0.7
+});
+const particles = new THREE.Points(particleGeo, particleMat);
+scene.add(particles);
+
+// Interaction & Mouse Tracking
+let mouseX = 0;
+let mouseY = 0;
+let targetRotY = 0;
+let targetRotX = 0;
+
+window.addEventListener('mousemove', (e) => {
+  const normX = (e.clientX / window.innerWidth) * 2 - 1;
+  const normY = -(e.clientY / window.innerHeight) * 2 + 1;
+  mouseX = normX;
+  mouseY = normY;
+  targetRotY = normX * 0.45;
+  targetRotX = -normY * 0.15;
+});
+
+// Render Loop
+let clock = new THREE.Clock();
+
+function animate() {
+  requestAnimationFrame(animate);
+  const elapsedTime = clock.getElapsedTime();
+
+  // Subtle breathing & idle kinematics
+  robotGroup.position.y = Math.sin(elapsedTime * 1.5) * 0.03;
+  torsoGroup.rotation.y = THREE.MathUtils.lerp(torsoGroup.rotation.y, targetRotY * 0.7, 0.05);
+  headGroup.rotation.y = THREE.MathUtils.lerp(headGroup.rotation.y, targetRotY, 0.08);
+  headGroup.rotation.x = THREE.MathUtils.lerp(headGroup.rotation.x, targetRotX, 0.08);
+
+  leftArm.rotation.x = Math.sin(elapsedTime * 1.2) * 0.05;
+  rightArm.rotation.x = -Math.sin(elapsedTime * 1.2) * 0.05;
+
+  robotGroup.rotation.y += 0.002;
+  platformRing.rotation.z += 0.004;
+
+  particles.rotation.y = elapsedTime * 0.02;
+
+  renderer.render(scene, camera);
+}
+animate();
+
+window.addEventListener('resize', () => {
+  const newW = container.clientWidth || window.innerWidth;
+  const newH = container.clientHeight || window.innerHeight;
+  camera.aspect = newW / newH;
+  camera.updateProjectionMatrix();
+  renderer.setSize(newW, newH);
+});
+
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_5 -->
+<!-- Top Telemetry Ribbon -->
+<div class="relative z-10 w-full px-margin pt-space-md flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm bg-surface-container/70 backdrop-blur-md px-space-md py-1.5 rounded-full shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-ping"></span>
+<span class="font-label-md text-label-md text-primary-container tracking-widest uppercase">TELEM // ONLINE</span>
+<span class="text-outline-variant font-label-sm text-label-sm">|</span>
+<span class="font-label-md text-label-md text-secondary">LINK RATE: 10Gbps ULTRA-RELAY</span>
+</div>
+<div class="hidden md:flex items-center gap-space-lg bg-surface-container/50 backdrop-blur-md px-space-md py-1.5 rounded-full shadow-sm">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">LATENCY</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">1.8ms</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">SOC</span>
+<span class="font-label-md text-label-md text-primary-container font-semibold">98.4%</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">CHASSIS</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">GEN-IV AEROSPACE COMPOSITE</span>
+</div>
+</div>
+</div>
+<!-- Center Content Overlay with Asymmetric Glass HUD Panes -->
+<div class="relative z-10 w-full px-margin my-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center pointer-events-none">
+<!-- Left Narrative Column -->
+<div class="lg:col-span-7 flex flex-col gap-space-md pt-space-lg pointer-events-auto">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-high/80 rounded backdrop-blur-md w-fit">
+<span class="material-symbols-outlined text-[16px] text-primary-container">memory</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary-container">Series 04 Production Platform</span>
+</div>
+<h1 class="font-display-xl text-display-xl uppercase tracking-tight text-on-surface drop-shadow-[0_4px_24px_rgba(0,0,0,0.8)]">
+          The Future of <br>
+<span class="text-primary-container drop-shadow-[0_0_24px_rgba(0,240,255,0.45)]">Humanoid Robotics</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+          Autonomous bipedal intelligence engineered for industrial scale, physical endurance, and seamless human coexistence. Powered by distributed edge neuro-motor inference.
+        </p>
+<!-- CTA Buttons -->
+<div class="flex flex-wrap items-center gap-space-md pt-space-sm">
+<a class="px-space-xl py-3.5 bg-primary-container text-on-primary-container font-label-lg text-label-lg uppercase tracking-wider font-bold rounded-full shadow-[0_0_24px_rgba(0,240,255,0.4)] hover:bg-primary hover:scale-[1.02] transition-all flex items-center gap-space-sm group" data-path="robots" href="Robot.html">
+<span class="">Explore Robot</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<a class="px-space-lg py-3.5 bg-surface-container/70 text-on-surface font-label-lg text-label-lg uppercase tracking-wider rounded-full backdrop-blur-md hover:bg-surface-container-high transition-all flex items-center gap-space-xs" data-path="technology" href="technology.html">
+<span class="material-symbols-outlined text-[18px] text-primary-container">vital_signs</span>
+<span class="">Discover Technology</span>
+</a>
+</div>
+</div>
+<!-- Right HUD Telemetry Box -->
+<div class="lg:col-span-5 flex flex-col gap-space-md pointer-events-auto">
+<div class="bg-surface-container/85 backdrop-blur-xl p-space-lg rounded-xl shadow-xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container shadow-[0_0_8px_#00f0ff]"></span>
+<span class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface">V-HUD TELEMETRY MATRIX</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline font-semibold">UNIT: NX-9042</span>
+</div>
+<!-- Live Metrics Grid -->
+<div class="grid grid-cols-2 gap-space-md">
+<div class="bg-surface-container-low p-space-md rounded flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Actuator Battery</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-headline-md text-headline-md text-on-surface">98.4</span>
+<span class="font-label-sm text-label-sm text-primary-container">%</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full mt-2 overflow-hidden">
+<div class="h-full bg-primary-container w-[98.4%]"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Neural Sync</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-headline-md text-headline-md text-on-surface">120</span>
+<span class="font-label-sm text-label-sm text-primary-container">FPS</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full mt-2 overflow-hidden">
+<div class="h-full bg-primary-container w-[92%]"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Payload Weight</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-headline-md text-headline-md text-on-surface">73.2</span>
+<span class="font-label-sm text-label-sm text-outline">KG</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Carbon Alloy Skeleton</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Kinetic DoF</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-headline-md text-headline-md text-on-surface">28</span>
+<span class="font-label-sm text-label-sm text-primary-container">AXES</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">11 in Bi-Lateral Hands</span>
+</div>
+</div>
+<!-- Telemetry Wave SVG -->
+<div class="bg-surface-container-low p-space-sm rounded flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span class="">SYNAPSE IMPULSE STREAM</span>
+<span class="text-primary-container">0.04ms JITTER</span>
+</div>
+<svg class="w-full h-9 text-primary-container" fill="none" viewBox="0 0 300 36">
+<path d="M0,18 L30,18 L45,4 L55,30 L65,18 L110,18 L120,8 L130,26 L140,18 L210,18 L220,2 L230,34 L240,18 L300,18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Chassis Variant Switcher -->
+<div class="relative z-10 w-full px-margin mt-space-md">
+<div class="w-full bg-surface-container-low/90 backdrop-blur-md rounded-xl p-space-sm flex flex-col md:flex-row items-center justify-between gap-space-md shadow-lg">
+<div class="flex items-center gap-space-sm px-space-sm">
+<span class="font-label-md text-label-md uppercase tracking-wider text-outline">SELECT UNIT VARIANT:</span>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap w-full md:w-auto" id="variant-selector">
+<button class="variant-btn active flex items-center gap-space-sm px-space-md py-2 bg-surface-container-highest rounded text-on-surface transition-colors cursor-pointer group" onclick="selectModel(0)" type="button">
+<img alt="NEXUS Prime Chassis Full View" class="w-6 h-6 object-contain rounded-full bg-surface-container-lowest p-0.5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8QdbNXXUZFeXvt5it9TKmNXh5BGrNK36mA0AbKapyuLmtTRw-0rpvAEYn5cgfRW2C22cnQjTJxp2jxr-rKqGOQ6Z7UTMYB27RCqnNYMRaeo_OZVehIHvo6FaADUzv6Y7TW2wnIxYnpfYGaXbb6rOSSGFo0DE7uplUBmo_mABJ_7bjqi9z2VJ503PDl0HHu-d97C2KgqzdCJzyYBrYVMoy_moHA8IeARqaHDWOmMRpZodYRuECJ4aOqw">
+<div class="text-left">
+<div class="font-label-md text-label-md font-bold text-primary-container group-hover:text-primary">01 // NEXUS PRIME</div>
+<div class="font-label-sm text-label-sm text-outline">Industrial Floor / General Automation</div>
+</div>
+</button>
+<button class="variant-btn flex items-center gap-space-sm px-space-md py-2 bg-surface-container rounded text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer group" onclick="selectModel(1)" type="button">
+<img alt="NEXUS Apex Upper Torso" class="w-6 h-6 object-contain rounded-full bg-surface-container-lowest p-0.5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYw-NwkIXdzWbQICcCFx2I41hBGv5TTWuetawNG_VbY4YyK6xqwahaVSindmieJw4Og2os5B7Ymjjke3GyW5-JvNeqSEq_88vg6c5FrB2F7UQnIQ_GI-mJFe-8B-pgI-oAFhIVCVsaGw8F4wSdU5iOQbgA8AIh9Lwlsrj1LPX7lobTeP13Bvza3TUGedXPIySD9XkHJS8_jbxKgB0m5pT8HKk8WAykvG-7fGdl2smE9V_6fD_DEcLLPA">
+<div class="text-left">
+<div class="font-label-md text-label-md font-bold text-on-surface group-hover:text-primary-container">02 // NEXUS APEX</div>
+<div class="font-label-sm text-label-sm text-outline">High-G Precision Cleanroom</div>
+</div>
+</button>
+<button class="variant-btn flex items-center gap-space-sm px-space-md py-2 bg-surface-container rounded text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer group" onclick="selectModel(2)" type="button">
+<img alt="NEXUS Core Cranial Display" class="w-6 h-6 object-contain rounded-full bg-surface-container-lowest p-0.5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBKkKLj-AyVD0CZJQS-B0QXOSalwTfJ9irhNVaU5_tTt6dtoo2G0CVjpy8uop5jDtzl_WJZlMNUCr3C-XUjMlJ-wDtbuCs9YHB28illPW0CSM_H84zOC8rLoMNXHeocxr_1lk6n_6bj_f7dBS0Y6XdxkIKwJiVQgrv5XAAWJgZ-iKqIcT-ENzUCD5oMwfJ5FubwUlGTU8GP6knMD4baUsTTKQRyIzX9SbhIJtbNwXGiznfLf5QdZ7p-w">
+<div class="text-left">
+<div class="font-label-md text-label-md font-bold text-on-surface group-hover:text-primary-container">03 // NEXUS CORE</div>
+<div class="font-label-sm text-label-sm text-outline">Field Telepresence &amp; Research SDK</div>
+</div>
+</button>
+</div>
+<div class="hidden lg:flex items-center gap-space-xs px-space-sm font-label-sm text-label-sm text-outline">
+<span class="material-symbols-outlined text-[16px] text-primary-container">verified</span>
+<span class="">ENTERPRISE SPEC READY</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. ROBOT SPEC HIGHLIGHTS: INTERACTIVE BLUEPRINT SECTION -->
+<section class="w-full bg-background py-space-xl px-margin">
+<div class="max-w-7xl mx-auto flex flex-col gap-space-xl">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div>
+<span class="font-label-md text-label-md uppercase tracking-widest text-primary-container">ANATOMY // 01</span>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface mt-1">Aerospace Architecture</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+          Zero-compromise engineering designed with smooth, unibody composite cowl plating, integrated wiring conduits, and sealed planar joint assemblies.
+        </p>
+</div>
+<!-- Side-by-Side Spec Showcase -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Center/Left Hero Display Box -->
+<div class="lg:col-span-6 bg-surface-container-lowest rounded-2xl p-space-lg flex flex-col items-center justify-center relative overflow-hidden min-h-[580px] shadow-xl">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(0,240,255,0.08)_0%,transparent_70%)]"></div>
+<!-- Robot Full Body Hero Rendering -->
+<img alt="NEXUS Prime Gen-3 Humanoid Robot" class="max-h-[520px] w-auto object-contain relative z-10 drop-shadow-[0_20px_35px_rgba(0,0,0,0.9)] transition-all duration-500" id="active-robot-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8QdbNXXUZFeXvt5it9TKmNXh5BGrNK36mA0AbKapyuLmtTRw-0rpvAEYn5cgfRW2C22cnQjTJxp2jxr-rKqGOQ6Z7UTMYB27RCqnNYMRaeo_OZVehIHvo6FaADUzv6Y7TW2wnIxYnpfYGaXbb6rOSSGFo0DE7uplUBmo_mABJ_7bjqi9z2VJ503PDl0HHu-d97C2KgqzdCJzyYBrYVMoy_moHA8IeARqaHDWOmMRpZodYRuECJ4aOqw">
+<!-- Coordinate Reticles Overlay -->
+<div class="absolute top-6 left-6 font-label-sm text-label-sm text-outline font-mono">
+            SYS.REF // LAT-42.99<br>
+            AXIS.ROT // [0, 180, 0]
+          </div>
+<!-- Hotspot Callout: Cranial Display -->
+<div class="absolute top-20 right-10 z-20 flex items-center gap-space-xs bg-surface-container-high/90 backdrop-blur-md px- space-sm py-1.5 rounded-full shadow-md">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface pr-1">Synthetic Visor HUD</span>
+</div>
+<!-- Hotspot Callout: Unibody Torso -->
+<div class="absolute top-1/2 left-8 z-20 flex items-center gap-space-xs bg-surface-container-high/90 backdrop-blur-md px-space-sm py-1.5 rounded-full shadow-md">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface pr-1">Structural Battery Pack</span>
+</div>
+<!-- Hotspot Callout: Hand Actuator -->
+<div class="absolute bottom-36 right-8 z-20 flex items-center gap-space-xs bg-surface-container-high/90 backdrop-blur-md px-space-sm py-1.5 rounded-full shadow-md">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface pr-1">11-DoF Dexterous Hands</span>
+</div>
+</div>
+<!-- Right Spec Bento Matrix -->
+<div class="lg:col-span-6 flex flex-col gap-space-md">
+<!-- Spec Card 1 -->
+<div class="bg-surface-container p-space-lg rounded-xl flex flex-col gap-space-xs shadow-md hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-primary-container">bolt</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary-container font-semibold">2.3 kWh Structural Powercore</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">CELL: 4680 SPEC</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              High-density structural energy cells nestled into the core torso, serving as both ballast and primary counterweight. Delivers 16 continuous hours of operational runtime on nominal factory workloads.
+            </p>
+<div class="flex items-center gap-space-lg pt-space-xs text-on-surface font-label-md text-label-md">
+<div class=""><span class="text-outline">CHARGE RATE:</span> 45 MIN TO 80%</div>
+<div class=""><span class="text-outline">COOLING:</span> MICROCHANNEL CONVECTIVE</div>
+</div>
+</div>
+<!-- Spec Card 2 -->
+<div class="bg-surface-container p-space-lg rounded-xl flex flex-col gap-space-xs shadow-md hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-primary-container">precision_manufacturing</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary-container font-semibold">Custom Harmonic Actuators</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">PEAK: 380 Nm TORQUE</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Proprietary strain wave gearing and titanium planetary drives throughout elbows, knees, and ankles. Calibrated for zero backlash with dual absolute encoders per limb.
+            </p>
+<div class="flex items-center gap-space-lg pt-space-xs text-on-surface font-label-md text-label-md">
+<div class=""><span class="text-outline">REPEATABILITY:</span> ±0.05 MM</div>
+<div class=""><span class="text-outline">THERMAL RUNAWAY:</span> MITIGATED</div>
+</div>
+</div>
+<!-- Spec Card 3 -->
+<div class="bg-surface-container p-space-lg rounded-xl flex flex-col gap-space-xs shadow-md hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-primary-container">fingerprint</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary-container font-semibold">Tactile Bio-Mimetic Hands</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">11 INDEPENDENT DoF</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Tendon-driven biological morphology equipped with pressure-sensitive fingertip micro-arrays. Capable of lifting a 20 kg crate or delicately handling fragile glassware without reprogramming.
+            </p>
+<div class="flex items-center gap-space-lg pt-space-xs text-on-surface font-label-md text-label-md">
+<div class=""><span class="text-outline">FORCE RANGE:</span> 0.1N — 180N</div>
+<div class=""><span class="text-outline">SURFACE:</span> CONDUCTIVE ELASTOMER</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. AUTONOMOUS CAPABILITIES GRID -->
+<section class="w-full bg-surface-container-lowest py-space-xl px-margin">
+<div class="max-w-7xl mx-auto flex flex-col gap-space-xl">
+<!-- Section Tag -->
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<span class="font-label-md text-label-md uppercase tracking-widest text-primary-container">AUTONOMY STACK // NEURAL ENGINE</span>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">End-To-End Cognitive Physics</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          NEXUS operates without scripted motion trajectories. Every stride, hand extension, and balance adjustment is calculated real-time by a singular deep neural network.
+        </p>
+</div>
+<!-- Feature Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Feature 1 -->
+<div class="bg-surface-container p-space-lg rounded-xl flex flex-col justify-between gap-space-md shadow-lg group hover:bg-surface-container-high transition-all">
+<div class="flex flex-col gap-space-sm">
+<div class="w-12 h-12 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[28px]">visibility</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">360° Photonic Spatial Vision</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Embedded wide-angle cameras and solid-state LiDAR fused into a continuous 3D occupancy vector field, predicting dynamic human movement paths up to 5 seconds ahead.
+            </p>
+</div>
+<div class="pt-space-md flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span class="">BANDWIDTH: 800 Gbps</span>
+<span class="text-primary-container">ACTIVE</span>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="bg-surface-container p-space-lg rounded-xl flex flex-col justify-between gap-space-md shadow-lg group hover:bg-surface-container-high transition-all">
+<div class="flex flex-col gap-space-sm">
+<div class="w-12 h-12 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[28px]">hub</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Zero-Shot Fleet Telemetry</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              When one humanoid learns a novel manipulation technique or navigates irregular debris, the neuro-motor weights update across the global deployment fleet in real-time.
+            </p>
+</div>
+<div class="pt-space-md flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span class="">SYNAPSE POOL: 4.2M UNITS</span>
+<span class="text-primary-container">SYNCED</span>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="bg-surface-container p-space-lg rounded-xl flex flex-col justify-between gap-space-md shadow-lg group hover:bg-surface-container-high transition-all">
+<div class="flex flex-col gap-space-sm">
+<div class="w-12 h-12 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[28px]">shield</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Hard Real-Time Safety Interlocks</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Independent FPGA watchdogs monitor joint torque, kinetic energy envelopes, and proximity margins with sub-millisecond emergency decrescendo to prevent personnel harm.
+            </p>
+</div>
+<div class="pt-space-md flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span class="">COMPLIANCE: ASIL-D ISO 13849</span>
+<span class="text-primary-container">CERTIFIED</span>
+</div>
+</div>
+</div>
+<!-- Realtime Telemetry Terminal Preview -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg flex flex-col gap-space-md shadow-xl">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary-container text-[20px]">terminal</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold">GLOBAL FLEET NEURAL SYNTHESIS DISPATCH</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">NODE // ORBITAL-US-WEST</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-md font-label-md text-label-md">
+<div class="bg-surface-container-low p-space-md rounded flex flex-col">
+<span class="text-outline text-label-sm">Total Active Bipeds</span>
+<span class="font-headline-md text-headline-md text-on-surface mt-1">1,482</span>
+<span class="text-primary-container text-label-sm font-semibold">99.98% On-Floor Up</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded flex flex-col">
+<span class="text-outline text-label-sm">Hours Walked (Autonomous)</span>
+<span class="font-headline-md text-headline-md text-on-surface mt-1">642,800</span>
+<span class="text-outline text-label-sm">Zero Incidents Logged</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded flex flex-col">
+<span class="text-outline text-label-sm">Objects Sorted / Placed</span>
+<span class="font-headline-md text-headline-md text-on-surface mt-1">19.4M</span>
+<span class="text-primary-container text-label-sm font-semibold">+18.2% Efficiency vs Human Std</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded flex flex-col">
+<span class="text-outline text-label-sm">Average Kinematic Power</span>
+<span class="font-headline-md text-headline-md text-on-surface mt-1">420 W</span>
+<span class="text-outline text-label-sm">Optimized Regenerative Braking</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. INDUSTRIAL DEPLOYMENT & ENTERPRISE PILOT CTA -->
+<section class="w-full bg-background py-space-xl px-margin">
+<div class="max-w-7xl mx-auto bg-surface-container rounded-2xl p-space-xl relative overflow-hidden shadow-2xl">
+<!-- Glow Graphic -->
+<div class="absolute -right-24 -bottom-24 w-96 h-96 rounded-full bg-primary-container/10 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-high rounded w-fit">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-container font-semibold">ENTERPRISE ACCESS Q3 2025</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">
+            <span id="applications"></span>Initiate Pilot Deployment In Your Facility
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+            Integrate NEXUS platforms into manufacturing, aerospace warehousing, or hazardous facility inspection. We deliver turn-key neural training, fleet docking stations, and 24/7 telemetry support.
+          </p>
+<div class="flex flex-wrap items-center gap-space-lg pt-space-xs font-label-md text-label-md text-outline">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[18px]">done_all</span>
+<span class="text-on-surface">Turnkey ROS2 &amp; Python SDK</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[18px]">done_all</span>
+<span class="text-on-surface">On-Premises Neural Weights</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[18px]">done_all</span>
+<span class="text-on-surface">ISO-Safe Speed Clamping</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-space-md bg-surface-container-low p-space-lg rounded-xl shadow-md">
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold">Reserve Fleet Allotment</span>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm text-outline" for="enterprise-email-input">Corporate Work Email</label>
+<input class="w-full px-space-md py-2.5 bg-surface-container-lowest rounded font-label-md text-label-md text-on-surface placeholder:text-outline focus:outline-none" id="enterprise-email-input" placeholder="operations@enterprise.corp" type="email">
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm text-outline" for="enterprise-fleet-select">Deployment Scope</label>
+<select class="w-full px-space-md py-2.5 bg-surface-container-lowest rounded font-label-md text-label-md text-on-surface focus:outline-none cursor-pointer" id="enterprise-fleet-select">
+<option value="eval">Evaluation Tier (2-4 Units)</option>
+<option value="pilot">Facility Pilot (10-25 Units)</option>
+<option value="enterprise">Full Factory Fleet (50+ Units)</option>
+</select>
+</div>
+<button class="w-full py-3 bg-primary-container text-on-primary-container font-label-md text-label-md uppercase tracking-wider font-bold rounded shadow-[0_0_16px_rgba(0,240,255,0.3)] hover:bg-primary transition-all flex items-center justify-center gap-space-xs mt-space-xs cursor-pointer" type="button">
+<span class="">Schedule Technical Review</span>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+<span class="font-label-sm text-label-sm text-outline text-center">NDA and hardware SLA provided prior to site walkthrough.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Script for Model Variant Carousel Interaction -->
+<script>
+    const models = [
+      {
+        src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCBuZESKbmt19L4LnFmJpGyO2K7HoQRYFiw-8zwTf-t6EKOtCx661FTXIlR-g88wNwG_hkXffPHiZAFv6Toe5aT7shGqz9n5boGLFMN0kTD19XUMCtk8aVjWJvkGyGNFZV_653hnnTYHqFUiQ_pqWXfbPJDRfRWhdS4gnniOtDuz2tlEEM1YI8grkzLJ5McETczWxctQFVEKA45qkgNSghy_VV965CmiunxCjF1XryJXDNKg-7DWYlCD6D6UWsuEZxNEhY",
+        alt: "NEXUS Prime Chassis Full View"
+      },
+      {
+        src: "https://lh3.googleusercontent.com/aida-public/AB6AXuA34Cv75T01OtqBQxdHCeCJ7dse5aj10T80S2Dlz6lPO9zkdO3T8RTFYovHZFZ66XNl6DXzUquyqylbmBo7MMKSMdEjOFb-j9oS3W2zLPdxzqNaU4xPKlrlNme0sWDAV0bdwPpGnzgBgdE1j4vYHiJCaTEayjiyJS51bIfrAQk9IqVRUFX4NpU39_bJ_qGwRvmj7ExCS8sgojfSl3Tdo-3eSoYraTObLxna28Tp5dWnqWOpYnszx58ZLx4_zg-ysmznlzY",
+        alt: "NEXUS Apex Upper Torso and Facial Array"
+      },
+      {
+        src: "https://lh3.googleusercontent.com/aida-public/AB6AXuD2PcPuWkiaO1766VNBpIOs6oqe8VCyfuEuoSCPGHuczb_R0qx04k0X8_T2Kkd8IQ4Ghtb3M8nFj5SQEbFYrg-qmVI7TxjVm3D9fCAEp908jWWol6TFvlOwz-2jw6ijTcz1yps_bWXU47QQNccVw7LF4weSz79h7WdrfbL1D4uQKnqK4zcCP1_A1JbFVbGLn6bt4h4n73CEWYK1tzsvyMeTe7IcAS4jDlNLAUWKBT4-Beav5qmHbxxWCn-8uQ8EpVtnCpI",
+        alt: "NEXUS Core Cranial Display and Sensor Ring"
+      }
+    ];
+
+    function selectModel(index) {
+      const imgElem = document.getElementById('active-robot-img');
+      const buttons = document.querySelectorAll('#variant-selector .variant-btn');
+
+      if (imgElem && models[index]) {
+        imgElem.style.opacity = '0';
+        imgElem.style.transform = 'scale(0.96)';
+
+        setTimeout(() => {
+          imgElem.src = models[index].src;
+          imgElem.alt = models[index].alt;
+          imgElem.style.opacity = '1';
+          imgElem.style.transform = 'scale(1)';
+        }, 200);
+      }
+
+      buttons.forEach((btn, idx) => {
+        if (idx === index) {
+          btn.classList.add('bg-surface-container-highest', 'text-on-surface');
+          btn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+        } else {
+          btn.classList.remove('bg-surface-container-highest', 'text-on-surface');
+          btn.classList.add('bg-surface-container', 'text-on-surface-variant');
+        }
+      });
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest border-t border-white/10"><div id="about"></div><div class="w-full px-margin py-space-xl"><div class="flex flex-wrap items-center justify-between pb-space-lg mb-space-xl border-b border-white/5 gap-space-md"><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-primary-container animate-pulse shadow-[0_0_10px_#00f0ff]"></span><span class="font-label-sm text-label-sm uppercase tracking-widest text-primary-container">ALL SYSTEMS OPERATIONAL // LATENCY 4ms</span></div><div class="flex items-center gap-space-lg"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">ISO 26262 ASIL-D</span><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">SOC 2 TYPE II</span><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">ITAR COMPLIANT</span><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">CE MARK ROBO-SPEC</span></div></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl mb-space-xl"><div class="lg:col-span-2 flex flex-col gap-space-md pr-space-lg"><div class="flex items-center gap-space-sm"><img alt="NEXUS Humanoid Robotics Logo" class="h-7 w-auto object-contain nx-logo-mark" src="assets/img/nexus-logo.svg"><span class="font-headline-sm text-headline-sm uppercase tracking-wider text-on-surface">NEXUS</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Pioneering advanced synthetic kinesiology and distributed neural motor intelligence. Precision aerospace chassis engineered for terrestrial and extra-planetary deployment.</p><div class="flex flex-col gap-space-xs mt-space-sm"><label class="font-label-sm text-label-sm uppercase tracking-widest text-outline" for="footer-sdk-email">Developer SDK &amp; Neural Firmware Dispatch</label><div class="flex items-center gap-space-xs max-w-md"><input class="w-full px-space-md py-2 bg-surface-container-low border border-outline-variant font-label-md text-label-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container rounded" id="footer-sdk-email" placeholder="developer@enterprise.internal" type="email"><button class="px-space-md py-2 bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider font-semibold rounded hover:bg-primary-container hover:text-on-primary-container transition-colors shrink-0" type="button">Subscribe</button></div></div></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface font-semibold">Platforms</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="robots" href="Robot.html">Chassis Series 09</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="robots" href="Robot.html">Kinesiology Atlas</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="technology" href="technology.html">Hydraulic Myomers</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="technology" href="technology.html">Tactile Skin V3</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="technology" href="technology.html">Battery Architecture</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface font-semibold">Intelligence</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="technology" href="technology.html">Neural Synthesis Core</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="technology" href="technology.html">Spatial Compute Stack</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="applications" href="index.html#applications">Teleoperation Relay</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="applications" href="index.html#applications">Factory Automation</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="applications" href="index.html#applications">Clinical Care Units</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface font-semibold">Corporate</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="about" href="index.html#about">Engineering Team</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="about" href="index.html#about">Mission Governance</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="shop" href="Shop.html">Commercial Fleet Orders</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="index.html#about">Safety Whitepapers</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="index.html#about">Telemetry Privacy</a></div></div><div class="pt-space-lg border-t border-white/5 flex flex-wrap items-center justify-between gap-space-md"><span class="font-label-sm text-label-sm tracking-wider uppercase text-outline">© 2026 NEXUS HUMANOID ROBOTICS INC.</span><div class="flex items-center gap-space-lg"><a class="font-label-sm text-label-sm uppercase tracking-wider text-outline hover:text-on-surface transition-colors" href="technology.html">Telemetry Protocol</a><a class="font-label-sm text-label-sm uppercase tracking-wider text-outline hover:text-on-surface transition-colors" href="index.html#about">Terms of Deployment</a><a class="font-label-sm text-label-sm uppercase tracking-wider text-outline hover:text-on-surface transition-colors" href="Robot.html">System Diagnostics</a></div></div></div></footer>
+
+<script>
+(function(){
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var els=[].slice.call(document.querySelectorAll("main .group, main [class*='rounded'][class*='bg-surface']"));
+  if(!("IntersectionObserver" in window) || !els.length) return;
+  els.forEach(function(el){ el.classList.add("nx-reveal"); });
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("is-visible"); io.unobserve(e.target);} });
+  },{threshold:0.12, rootMargin:"0px 0px -40px 0px"});
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script></body></html>

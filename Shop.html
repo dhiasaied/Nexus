@@ -1,0 +1,782 @@
+<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><title>NEXUS Humanoid Robotics</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"secondary-container":"#46494d","tertiary-fixed-dim":"#7bd0ff","error-container":"#93000a","on-primary-fixed-variant":"#004f54","on-surface-variant":"#b9cacb","surface-tint":"#00dbe9","surface-container":"#1d2025","on-secondary":"#2d3135","primary-fixed-dim":"#00dbe9","surface-container-low":"#191c21","on-tertiary":"#00354a","surface-container-highest":"#33353b","on-error-container":"#ffdad6","surface-variant":"#33353b","tertiary-fixed":"#c4e7ff","primary-fixed":"#7df4ff","tertiary":"#eef7ff","background":"#111319","outline":"#849495","on-primary-container":"#006970","inverse-primary":"#006970","inverse-on-surface":"#2e3036","on-tertiary-container":"#00668b","on-tertiary-fixed-variant":"#004c69","secondary-fixed-dim":"#c4c6cb","primary":"#dbfcff","inverse-surface":"#e2e2ea","surface-dim":"#111319","tertiary-container":"#aee0ff","on-secondary-fixed-variant":"#44474b","on-surface":"#e2e2ea","secondary":"#c4c6cb","surface-container-high":"#282a30","on-background":"#e2e2ea","on-primary-fixed":"#002022","outline-variant":"#3b494b","surface-container-lowest":"#0c0e13","on-error":"#690005","surface":"#111319","on-secondary-fixed":"#181c20","surface-bright":"#37393f","error":"#ffb4ab","secondary-fixed":"#e0e2e7","on-secondary-container":"#b6b8bd","on-tertiary-fixed":"#001e2c","on-primary":"#00363a","primary-container":"#00f0ff"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"margin":"2rem","gutter":"1.25rem","space-sm":"0.5rem","space-xl":"3rem","space-md":"1rem","space-lg":"1.5rem","space-xs":"0.25rem"},fontFamily:{"label-lg":["JetBrains Mono"],"display-xl":["Space Grotesk"],"body-sm":["Manrope"],"body-md":["Manrope"],"label-sm":["JetBrains Mono"],"headline-md":["Space Grotesk"],"headline-lg":["Space Grotesk"],"label-md":["JetBrains Mono"],"headline-sm":["Space Grotesk"],"headline-lg-mobile":["Space Grotesk"],"display-xl-mobile":["Space Grotesk"],"body-lg":["Manrope"]},fontSize:{"label-lg":["13px",{"lineHeight":"18px","fontWeight":"500"}],"display-xl":["64px",{"lineHeight":"72px","fontWeight":"700"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}],"label-sm":["9px",{"lineHeight":"12px","fontWeight":"500"}],"headline-md":["28px",{"lineHeight":"36px","fontWeight":"500"}],"headline-lg":["40px",{"lineHeight":"48px","fontWeight":"600"}],"label-md":["11px",{"lineHeight":"16px","fontWeight":"500"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"500"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","fontWeight":"600"}],"display-xl-mobile":["38px",{"lineHeight":"46px","fontWeight":"700"}],"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}]}}}};</script><link rel="stylesheet" href="assets/css/animations.css"></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary"><header class="fixed top-0 left-0 right-0 z-50 w-full backdrop-blur-md bg-surface-container-lowest/85 border-b border-white/10"><div class="h-20 w-full px-margin flex items-center justify-between"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm" data-path="home" href="index.html"><img alt="NEXUS Humanoid Robotics Logo" class="h-8 w-auto object-contain nx-logo-mark" src="assets/img/nexus-logo.svg"><span class="font-headline-sm text-headline-sm uppercase tracking-wider text-on-surface hidden sm:inline-block">NEXUS</span></a></div><nav class="hidden xl:flex items-center gap-space-xl" data-active-classes="text-primary-container border-b-2 border-primary-container"><a class="font-label-lg text-label-lg tracking-widest uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-sm" data-path="home" href="index.html">Home</a><a class="font-label-lg text-label-lg tracking-widest uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-sm" data-path="about" href="index.html#about">About</a><a class="font-label-lg text-label-lg tracking-widest uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-sm" data-path="robots" href="Robot.html">Robots</a><a class="font-label-lg text-label-lg tracking-widest uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-sm" data-path="technology" href="technology.html">Technology</a><a class="font-label-lg text-label-lg tracking-widest uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-sm" data-path="applications" href="index.html#applications">Applications</a><a aria-current="page" class="font-label-lg tracking-widest uppercase transition-colors py-space-sm text-primary-container border-b-2 border-primary-container" data-path="shop" href="Shop.html">Shop</a></nav><div class="flex items-center gap-space-md"><button aria-label="Notifications" class="relative p-space-xs text-on-surface-variant hover:text-on-surface transition-colors flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary-container shadow-[0_0_8px_#00f0ff]"></span></button><a aria-label="Cart" href="Shop.html" class="relative p-space-xs text-on-surface-variant hover:text-on-surface transition-colors flex items-center justify-center"><span class="material-symbols-outlined text-[22px]">shopping_bag</span><span class="absolute -top-1 -right-1 font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-surface-container-highest text-primary-container border border-primary-container/40 leading-none">0</span></a><a class="flex items-center gap-space-xs px-space-md py-1.5 rounded-full border border-outline-variant bg-surface-container/60 hover:border-primary-container hover:bg-surface-container-high transition-all text-on-surface group" data-path="login" href="login.html"><span class="material-symbols-outlined text-[18px] text-primary-container group-hover:scale-105 transition-transform">terminal</span><span class="font-label-md text-label-md uppercase tracking-wider text-on-surface">Login</span></a><a href="login.html" aria-label="Account" class="w-8 h-8 rounded-full bg-primary flex items-center justify-center hover:scale-105 transition-transform"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></a></div></div></header><main class="w-full pt-20 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- Subtle Spatial Glow Backdrop (contained) -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-40 left-1/4 w-[600px] h-[350px] bg-primary-container/10 blur-[130px] pointer-events-none rounded-full"></div>
+<div class="absolute top-96 right-10 w-[450px] h-[300px] bg-tertiary-fixed-dim/5 blur-[120px] pointer-events-none rounded-full"></div>
+<!-- Store Hero Banner / Control Header -->
+<section class="w-full px-margin pt-space-lg pb-space-xl">
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container shadow-[0_0_8px_#00f0ff] animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary-container">SYS_CATALOG // REV 4.8.2 // INVENTORY SYNCHRONIZED</span>
+</div>
+<h1 class="font-display-xl text-display-xl text-on-surface tracking-tight uppercase">Hardware Store &amp; Fleet Procurement</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Deploy certified humanoid platforms, military-grade bionic end-effectors, modular replacement actuators, and official high-density apparel.</p>
+</div>
+<!-- Telemetry Controls & Currency Switcher -->
+<div class="flex flex-wrap items-center gap-space-md">
+<!-- Currency Picker -->
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg">
+<button class="currency-btn active px-space-md py-1 rounded font-label-md text-label-md tracking-wider uppercase text-on-primary-fixed bg-primary-container transition-all" data-curr="TND" type="button">TND (د.ت)</button>
+<button class="currency-btn px-space-md py-1 rounded font-label-md text-label-md tracking-wider uppercase text-on-surface-variant hover:text-on-surface transition-all" data-curr="EUR" type="button">EUR (€)</button>
+<button class="currency-btn px-space-md py-1 rounded font-label-md text-label-md tracking-wider uppercase text-on-surface-variant hover:text-on-surface transition-all" data-curr="BTC" type="button">BTC (₿)</button>
+</div>
+<!-- PO & Procurement Support CTA -->
+<button class="flex items-center gap-space-xs px-space-md py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md uppercase tracking-wider transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary-container">description</span>
+<span class="">Enterprise PO Gateway</span>
+</button>
+</div>
+</div>
+<!-- Realtime Search & Metric Tape -->
+<div class="mt-space-lg grid grid-cols-1 md:grid-cols-12 gap-space-md items-center">
+<!-- Search Input -->
+<div class="md:col-span-8 relative">
+<span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-outline text-[20px] pointer-events-none">search</span>
+<input class="w-full pl-12 pr-space-lg py-3 rounded-xl bg-surface-container-low text-on-surface placeholder:text-outline font-label-md text-label-md focus:outline-none focus:ring-1 focus:ring-primary-container" id="store-search" placeholder="Search by SKU, neural component, torque specification, or platform ID..." type="text">
+<div class="absolute right-space-md top-1/2 -translate-y-1/2 flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase bg-surface-container-highest px-2 py-0.5 rounded text-outline">CMD + K</span>
+</div>
+</div>
+<!-- Metric pill cards -->
+<div class="md:col-span-4 flex items-center justify-between px-space-md py-2.5 bg-surface-container-low rounded-xl">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Production Run</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Q3 2025 // ACTIVE</span>
+</div>
+<div class="h-6 w-px bg-white/10"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Lead Time</span>
+<span class="font-label-md text-label-md text-primary-container font-semibold">7-14 Days Express</span>
+</div>
+<div class="h-6 w-px bg-white/10"></div>
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-label-sm uppercase text-outline">Escrow State</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">ASIL-D Cleared</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Store Body (Asymmetrical 12-Column Blueprint) -->
+<div class="w-full px-margin pb-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- SIDEBAR: Filter & Category Architecture (3 cols) -->
+<aside class="lg:col-span-3 flex flex-col gap-space-md sticky top-24">
+<!-- Categories Block -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col gap-space-sm shadow-md">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface font-semibold">Subsystems</span>
+<span class="font-label-sm text-label-sm text-outline">66 ITEMS</span>
+</div>
+<div class="flex flex-col gap-1 text-on-surface-variant font-label-md text-label-md">
+<button class="cat-filter flex items-center justify-between w-full px-space-sm py-2 rounded-lg bg-surface-container-high text-primary-container font-semibold transition-all" data-category="all" type="button">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px]">all_inclusive</span>
+<span class="">Full Catalog</span>
+</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-primary-container">66</span>
+</button>
+<button class="cat-filter flex items-center justify-between w-full px-space-sm py-2 rounded-lg hover:bg-surface-container hover:text-on-surface transition-all text-on-surface-variant" data-category="robots" type="button">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px]">smart_toy</span>
+<span class="">Humanoid Robots</span>
+</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-highest">3</span>
+</button>
+<button class="cat-filter flex items-center justify-between w-full px-space-sm py-2 rounded-lg hover:bg-surface-container hover:text-on-surface transition-all text-on-surface-variant" data-category="accessories" type="button">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px]">charging_station</span>
+<span class="">Accessories &amp; Docks</span>
+</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-highest">12</span>
+</button>
+<button class="cat-filter flex items-center justify-between w-full px-space-sm py-2 rounded-lg hover:bg-surface-container hover:text-on-surface transition-all text-on-surface-variant" data-category="parts" type="button">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px]">precision_manufacturing</span>
+<span class="">Spare Parts &amp; Actuators</span>
+</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-highest">28</span>
+</button>
+<button class="cat-filter flex items-center justify-between w-full px-space-sm py-2 rounded-lg hover:bg-surface-container hover:text-on-surface transition-all text-on-surface-variant" data-category="wear" type="button">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px]">apparel</span>
+<span class="">Tactical Wear &amp; Apparel</span>
+</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-highest">8</span>
+</button>
+<button class="cat-filter flex items-center justify-between w-full px-space-sm py-2 rounded-lg hover:bg-surface-container hover:text-on-surface transition-all text-on-surface-variant" data-category="miniatures" type="button">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px]">extension</span>
+<span class="">Miniatures &amp; Collectibles</span>
+</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-highest">15</span>
+</button>
+</div>
+</div>
+<!-- Availability & Logistics Filter -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col gap-space-md shadow-md">
+<span class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface font-semibold">Deployment Status</span>
+<div class="flex flex-col gap-space-sm font-label-md text-label-md text-on-surface-variant">
+<label class="flex items-center gap-space-sm cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded bg-surface-container-highest accent-primary-container cursor-pointer" type="checkbox">
+<span class="flex items-center gap-1.5 text-on-surface">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span> Ready to Ship (In Stock)
+                </span>
+</label>
+<label class="flex items-center gap-space-sm cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded bg-surface-container-highest accent-primary-container cursor-pointer" type="checkbox">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span> Production Batch Q3 2025
+                </span>
+</label>
+<label class="flex items-center gap-space-sm cursor-pointer select-none">
+<input class="w-4 h-4 rounded bg-surface-container-highest accent-primary-container cursor-pointer" type="checkbox">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-outline"></span> Fleet Custom Build (Made-to-Order)
+                </span>
+</label>
+</div>
+<!-- Price Slider Block -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline uppercase">
+<span class="">Procurement Range</span>
+<span class="text-primary-container font-semibold" id="price-range-val">50 — 45,000 TND</span>
+</div>
+<input class="w-full accent-primary-container bg-surface-container cursor-pointer" id="price-slider" max="45000" min="50" type="range" value="45000">
+<div class="flex justify-between font-label-sm text-label-sm text-outline">
+<span class="">50 TND</span>
+<span class="">45,000+ TND</span>
+</div>
+</div>
+<!-- Application Scope -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Application Scope</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="font-label-sm text-label-sm px-2 py-1 rounded bg-surface-container text-on-surface cursor-pointer hover:bg-surface-container-high transition-colors">Cleanroom ISO-3</span>
+<span class="font-label-sm text-label-sm px-2 py-1 rounded bg-surface-container text-on-surface cursor-pointer hover:bg-surface-container-high transition-colors">Factory Line</span>
+<span class="font-label-sm text-label-sm px-2 py-1 rounded bg-surface-container text-on-surface cursor-pointer hover:bg-surface-container-high transition-colors">Bio-Medical</span>
+<span class="font-label-sm text-label-sm px-2 py-1 rounded bg-surface-container text-on-surface cursor-pointer hover:bg-surface-container-high transition-colors">R&amp;D Tele-Op</span>
+</div>
+</div>
+</div>
+<!-- Telemetry Warranty Widget -->
+<div class="bg-surface-container p-space-md rounded-xl flex items-start gap-space-sm shadow-md">
+<span class="material-symbols-outlined text-primary-container text-[24px]">verified_user</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface uppercase">Nexus Global Warranty</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Every chassis includes 36-month zero-downtime hot-swap module replacement and direct OTA telemetry monitoring.</p>
+</div>
+</div>
+</aside>
+<!-- PRODUCT CATALOG GRID (9 cols) -->
+<main class="lg:col-span-9 flex flex-col gap-space-lg">
+<!-- FEATURED HERO PRODUCT: NEXUS Prime Gen-3 Production Unit (Bento Span) -->
+<article class="product-item relative bg-surface-container-low rounded-2xl overflow-hidden shadow-xl" data-category="robots" data-price="39500">
+<div class="grid grid-cols-1 md:grid-cols-12 items-stretch">
+<!-- Visual Stage -->
+<div class="md:col-span-7 relative min-h-[380px] md:min-h-[460px] bg-surface-container-lowest flex items-center justify-center overflow-hidden p-space-lg">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent z-10"></div>
+<!-- Precision Image Anchor -->
+<img alt="NEXUS Prime Gen-3 Production Unit" class="relative z-0 max-h-[420px] w-auto object-contain transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6jPw_OgGjkmltqkUKI-AQdKdymeND3zTLdrgJn4iXXAYPc9zuVHCqn4HCrtXO5bHOR3pGrXWJByXnKbRgK1gI_O0ooO0pyBEtE4H4xEdDUsvnMlXg92iTCEf5aMwt4M5avCuMSa1NHqWShnZuYIUsqT9f1c9ST5SMDB9DfIjcDzxTilBtQyapXLxgM-9JEcHidL6XlTrI3lMdB3aeDRF0xhxtoFN2YWWwiP-hN7watG0B4I9x46PbsQ">
+<!-- HUD Overlays inside image viewport -->
+<div class="absolute top-space-md left-space-md z-20 flex flex-col gap-1.5">
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md">
+<span class="w-2 h-2 rounded-full bg-primary-container shadow-[0_0_8px_#00f0ff] animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-container font-semibold">In Production // Batch 04</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase text-outline px-2">CHASSIS SERIAL: NX-09-V3</span>
+</div>
+<div class="absolute bottom-space-md left-space-md z-20 flex items-center gap-space-xs">
+<button class="quick-3d-btn px-space-md py-1.5 rounded-lg bg-surface-container-highest/80 backdrop-blur-md text-on-surface hover:text-primary-container hover:bg-surface-bright font-label-md text-label-md uppercase tracking-wider flex items-center gap-1 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">view_in_ar</span>
+<span class="">3D Kinesiology View</span>
+</button>
+</div>
+</div>
+<!-- Product Details & Configuration Desk -->
+<div class="md:col-span-5 p-space-lg flex flex-col justify-between bg-surface-container-low">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary-container">FLAGSHIP PLATFORM</span>
+<span class="font-label-sm text-label-sm text-outline">SKU: NX-ROBO-P03</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">NEXUS Prime Gen-3 Production Unit</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">Full-scale autonomous bipedal android equipped with synthetic tendon actuators, liquid-cooled neural compute, and millisecond spatial balance.</p>
+<!-- Technical Spec Readout Grid -->
+<div class="grid grid-cols-3 gap-2 mt-space-md p-space-sm bg-surface-container rounded-lg">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Kinetics</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">28 <span class="font-label-sm text-label-sm text-on-surface-variant font-normal">DoF</span></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Endurance</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">16<span class="font-label-sm text-label-sm text-on-surface-variant font-normal">h Run</span></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Inference</span>
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">FSD <span class="font-label-sm text-label-sm text-on-surface-variant font-normal">v12</span></span>
+</div>
+</div>
+<!-- Fleet Lease Calculation Notice -->
+<div class="flex items-center justify-between mt-space-md py-space-xs px-space-sm rounded bg-surface-container-high/60">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Fleet Lease Available</span>
+<span class="font-label-md text-label-md font-semibold text-tertiary-fixed-dim">850 TND / month</span>
+</div>
+</div>
+<!-- Price & Ordering Tier -->
+<div class="pt-space-md mt-space-md">
+<div class="flex items-baseline justify-between mb-space-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Outright Purchase</span>
+<span class="font-display-xl-mobile text-display-xl-mobile text-on-surface font-bold tracking-tight product-price" data-tnd="39500">39,500 TND</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Includes Deployment SDK</span>
+</div>
+<div class="flex flex-col sm:flex-row gap-space-xs">
+<button class="add-to-cart-btn flex-1 py-3 px-space-md rounded-lg bg-primary-container text-on-primary-fixed hover:bg-surface-tint font-label-md text-label-md uppercase tracking-wider font-semibold transition-all flex items-center justify-center gap-space-xs shadow-md" data-id="nx-prime-gen3" data-name="NEXUS Prime Gen-3 Unit" data-price="39500" type="button">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span class="">Add to Fleet Cart</span>
+</button>
+<button class="py-3 px-space-md rounded-lg bg-surface-container-highest hover:bg-surface-bright text-on-surface font-label-md text-label-md uppercase tracking-wider font-semibold transition-all flex items-center justify-center gap-space-xs" type="button">
+<span class="">Configure Chassis</span>
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- SECONDARY PRODUCTS GRID: 4 Structured Industrial Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- PRODUCT 2: Dexterous 11-DoF Tactile Bionic Hand (Pair) -->
+<article class="product-item bg-surface-container-low rounded-xl overflow-hidden flex flex-col justify-between shadow-md transition-all hover:bg-surface-container" data-category="parts" data-price="4800">
+<div class="p-space-md">
+<div class="relative w-full h-56 bg-surface-container-lowest rounded-lg flex items-center justify-center overflow-hidden mb-space-md">
+<div class="absolute top-2 left-2 flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-md">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="font-label-sm text-label-sm uppercase text-tertiary-fixed-dim font-medium">Limited Batch</span>
+</div>
+<span class="absolute top-2 right-2 font-label-sm text-label-sm uppercase text-outline">END-EFFECTOR</span>
+<img alt="Dexterous 11-DoF Tactile Bionic Hand" class="max-h-48 w-auto object-contain transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEDWRq98daAwv4yIEwN111pKJNXF3f3MViG361j6bbaAvvnUZ-MRkpsfrR6Aq65h8tJmmL98UbtbWmtFB6L4IM6vjfH0sp067EWZUgDqhIRwTc8YotckP0o3FfgFhaAC1vmdjatwyddLYRnwXBjad8MR-F2f9BmsbDfv-0sMTEgD6CU2ct0T34Blxv_4x25bwt3pReonjwaLBpoIG9VPIBKGrHU9RCo5S0jnzXetmgHddEkqMjTR2W1A">
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-primary-container">Subsystem // End-Effector</span>
+<span class="font-label-sm text-label-sm text-outline">SKU: NX-HND-11X</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-1">Dexterous 11-DoF Tactile Bionic Hand (Pair)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">High-density capacitive tactile array with 0.05N force feedback resolution and flexible tendon slip sensors. Bilateral left/right set.</p>
+<!-- Spec Pill Strip -->
+<div class="flex items-center gap-space-xs mt-space-sm font-label-sm text-label-sm text-outline">
+<span class="bg-surface-container px-2 py-0.5 rounded">11 Actuated DoF</span>
+<span class="bg-surface-container px-2 py-0.5 rounded">400Hz Sensor Polling</span>
+<span class="bg-surface-container px-2 py-0.5 rounded">Quick-Disconnect</span>
+</div>
+</div>
+<div class="p-space-md pt-0">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Direct Purchase</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold product-price" data-tnd="4800">4,800 TND</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary-container">In Stock (14 pairs)</span>
+</div>
+<button class="add-to-cart-btn w-full py-2.5 px-space-md rounded-lg bg-surface-container-highest hover:bg-primary-container hover:text-on-primary-fixed text-on-surface font-label-md text-label-md uppercase tracking-wider font-semibold transition-all flex items-center justify-center gap-space-xs" data-id="nx-hand-pair" data-name="11-DoF Tactile Hand Pair" data-price="4800" type="button">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span class="">Add to Cart</span>
+</button>
+</div>
+</article>
+<!-- PRODUCT 3: Harmonic Actuator Cluster - Knee/Hip (Spare Part) -->
+<article class="product-item bg-surface-container-low rounded-xl overflow-hidden flex flex-col justify-between shadow-md transition-all hover:bg-surface-container" data-category="parts" data-price="1450">
+<div class="p-space-md">
+<div class="relative w-full h-56 bg-surface-container-lowest rounded-lg flex items-center justify-center overflow-hidden mb-space-md">
+<div class="absolute top-2 left-2 flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-md">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm uppercase text-primary-container font-medium">Ready to Ship</span>
+</div>
+<span class="absolute top-2 right-2 font-label-sm text-label-sm uppercase text-outline">DRIVETRAIN</span>
+<!-- Architectural Blueprint Vector / Visual Placeholder for Actuator -->
+<img alt="Harmonic Actuator Cluster" class="w-full h-full object-cover rounded transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYyFB-u5CH9AMkJawB-pKMuEZPGJBnl8z9oHg_j6uXtJazd9qvq61O7BzZT1MnrAxB8S6ZaUlDD13vl2Bojiduxl_twAa1EZ7wvoZparV_Dscb87Piivz6lbZ8h2fGskycbvRjTpBNgQTGZ-LaAhTeIsV0Jf57qAIE_hGnEpmMX-LzYD_ygCfMskpXSqlmvqr_kmFGbZ_XfQqPEOYlrESj1gsQVVC5OkVuuv46X1Py0svx8df_zMWt4A">
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-primary-container">Kinematic Component</span>
+<span class="font-label-sm text-label-sm text-outline">SKU: NX-ACT-K90</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-1">Harmonic Actuator Cluster - Knee/Hip (Spare Part)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Strain wave gearing with integrated strain gauges, dual optical absolute encoders, and thermal vapor chamber dissipation.</p>
+<!-- Spec Pill Strip -->
+<div class="flex items-center gap-space-xs mt-space-sm font-label-sm text-label-sm text-outline">
+<span class="bg-surface-container px-2 py-0.5 rounded">180 Nm Peak Torque</span>
+<span class="bg-surface-container px-2 py-0.5 rounded">Brushless DC</span>
+<span class="bg-surface-container px-2 py-0.5 rounded">IP67 Sealed</span>
+</div>
+</div>
+<div class="p-space-md pt-0">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Direct Purchase</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold product-price" data-tnd="1450">1,450 TND</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary-container">Dispatch in 24h</span>
+</div>
+<button class="add-to-cart-btn w-full py-2.5 px-space-md rounded-lg bg-surface-container-highest hover:bg-primary-container hover:text-on-primary-fixed text-on-surface font-label-md text-label-md uppercase tracking-wider font-semibold transition-all flex items-center justify-center gap-space-xs" data-id="nx-actuator-knee" data-name="Harmonic Actuator Cluster" data-price="1450" type="button">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span class="">Add to Cart</span>
+</button>
+</div>
+</article>
+<!-- PRODUCT 4: Supercharging Dock Station 400V DC -->
+<article class="product-item bg-surface-container-low rounded-xl overflow-hidden flex flex-col justify-between shadow-md transition-all hover:bg-surface-container" data-category="accessories" data-price="2200">
+<div class="p-space-md">
+<div class="relative w-full h-56 bg-surface-container-lowest rounded-lg flex items-center justify-center overflow-hidden mb-space-md">
+<div class="absolute top-2 left-2 flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-md">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm uppercase text-primary-container font-medium">In Production</span>
+</div>
+<span class="absolute top-2 right-2 font-label-sm text-label-sm uppercase text-outline">POWER INFRA</span>
+<img alt="Supercharging Dock Station 400V DC" class="w-full h-full object-cover rounded transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXZ0DOy1QclsO6q_nxS5dR8fb3CI-yNMcBjfEL-6OPqkEEpmvm46ASi6L8-477uoJKBo1Oq8QFHYqYgfak9Qkv-a7tjMRmhJANkOBsBXx78owqAUJPT8q_6PAtJm-EHhqtlqhQAH6WWytN_sQcYK8WvrCr12Qal5cesBQz4Nzx5BZWxcF_MpMq7TKP0UW6iGA4NjU4h0etBeRP5EbTzNziMLvDq8Mj9DWGMl7OxwOn_rBC_ySKYsqOYw">
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-primary-container">Infrastructure</span>
+<span class="font-label-sm text-label-sm text-outline">SKU: NX-DCK-400</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-1">Supercharging Dock Station 400V DC</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Autonomous magnetic backing dock. 0 to 80% charging in 22 minutes via dual liquid-contact umbilical rails. Floor-bolt kit included.</p>
+<!-- Spec Pill Strip -->
+<div class="flex items-center gap-space-xs mt-space-sm font-label-sm text-label-sm text-outline">
+<span class="bg-surface-container px-2 py-0.5 rounded">400V 32A DC</span>
+<span class="bg-surface-container px-2 py-0.5 rounded">CAN-Bus Sync</span>
+<span class="bg-surface-container px-2 py-0.5 rounded">Emergency E-Stop</span>
+</div>
+</div>
+<div class="p-space-md pt-0">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Direct Purchase</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold product-price" data-tnd="2200">2,200 TND</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary-container">Ready to Ship</span>
+</div>
+<button class="add-to-cart-btn w-full py-2.5 px-space-md rounded-lg bg-surface-container-highest hover:bg-primary-container hover:text-on-primary-fixed text-on-surface font-label-md text-label-md uppercase tracking-wider font-semibold transition-all flex items-center justify-center gap-space-xs" data-id="nx-dock-400v" data-name="Supercharging Dock 400V" data-price="2200" type="button">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span class="">Add to Cart</span>
+</button>
+</div>
+</article>
+<!-- PRODUCT 5: NEXUS Tactical Cyber Jacket (Merchandise) -->
+<article class="product-item bg-surface-container-low rounded-xl overflow-hidden flex flex-col justify-between shadow-md transition-all hover:bg-surface-container" data-category="wear" data-price="180">
+<div class="p-space-md">
+<div class="relative w-full h-56 bg-surface-container-lowest rounded-lg flex items-center justify-center overflow-hidden mb-space-md">
+<div class="absolute top-2 left-2 flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-md">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm uppercase text-primary-container font-medium">Standard Stock</span>
+</div>
+<span class="absolute top-2 right-2 font-label-sm text-label-sm uppercase text-outline">OFFICIAL WEAR</span>
+<img alt="NEXUS Tactical Cyber Jacket" class="w-full h-full object-cover rounded transition-transform duration-500 hover:scale-105" src="assets/img/nexus-tactical-cyber-jacket.jpg">
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-primary-container">Apparel // Fleet Edition</span>
+<span class="font-label-sm text-label-sm text-outline">SKU: NX-APP-TCJ</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-1">NEXUS Tactical Cyber Jacket (Merchandise)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Matte obsidian hydrophobic softshell with interior conductive carbon weave lining, luminescent magnetic cuffs, and embroidered serial insignias.</p>
+<!-- Size selector -->
+<div class="flex items-center gap-2 mt-space-sm font-label-sm text-label-sm">
+<span class="text-outline uppercase">Size:</span>
+<button class="size-btn px-2.5 py-1 rounded bg-surface-container-highest text-primary-container font-semibold" type="button">S</button>
+<button class="size-btn px-2.5 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface" type="button">M</button>
+<button class="size-btn px-2.5 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface" type="button">L</button>
+<button class="size-btn px-2.5 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface" type="button">XL</button>
+</div>
+</div>
+<div class="p-space-md pt-0">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Unit Price</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold product-price" data-tnd="180">180 TND</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary-container">All Sizes In Stock</span>
+</div>
+<button class="add-to-cart-btn w-full py-2.5 px-space-md rounded-lg bg-surface-container-highest hover:bg-primary-container hover:text-on-primary-fixed text-on-surface font-label-md text-label-md uppercase tracking-wider font-semibold transition-all flex items-center justify-center gap-space-xs" data-id="nx-jacket-tac" data-name="NEXUS Tactical Cyber Jacket" data-price="180" type="button">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span class="">Select Size &amp; Add</span>
+</button>
+</div>
+</article>
+</div>
+<!-- Enterprise Fleet Bulk Procurement Strip -->
+<div class="bg-gradient-to-r from-surface-container-low via-surface-container to-surface-container-low p-space-lg rounded-xl flex flex-col md:flex-row items-center justify-between gap-space-md shadow-lg">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary-container/20 flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-[28px]">domain_add</span>
+</div>
+<div class="flex flex-col">
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Procuring a Fleet of 10+ Androids?</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Access wholesale volume pricing, dedicated on-site neural engineers, custom sensor payloads, and air-gapped intranet server nodes.</p>
+</div>
+</div>
+<button class="whitespace-nowrap px-space-lg py-3 rounded-lg bg-on-surface text-surface font-label-md text-label-md uppercase tracking-wider font-semibold hover:bg-primary-container hover:text-on-primary-fixed transition-all shrink-0" type="button">
+              Request Fleet Proposal
+            </button>
+</div>
+</main>
+</div>
+</div>
+</div>
+<!-- FLOATING CYBERNETIC CART & SLIDEOUT DRAWER -->
+<div class="fixed inset-y-0 right-0 z-50 w-full sm:w-[460px] bg-surface-container-low shadow-2xl translate-x-full transition-transform duration-300 flex flex-col" id="cart-drawer">
+<!-- Drawer Header -->
+<div class="p-space-lg bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container">shopping_bag</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold uppercase tracking-wider">Fleet Payload Cart</span>
+</div>
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" id="close-cart-btn" type="button">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+</div>
+<!-- Active Telemetry Notice in Cart -->
+<div class="px-space-lg py-2 bg-surface-container-lowest flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase text-primary-container">ENC_SECURE 256-BIT DISPATCH</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">GLOBAL LOGISTICS</span>
+</div>
+<!-- Items Container -->
+<div class="flex-1 overflow-y-auto p-space-lg flex flex-col gap-space-md" id="cart-items-list">
+<!-- Items dynamically populated via JS -->
+<div class="py-12 flex flex-col items-center justify-center text-center text-on-surface-variant" id="empty-cart-msg">
+<span class="material-symbols-outlined text-[48px] text-outline mb-2">production_quantity_limits</span>
+<p class="font-body-md text-body-md">Your procurement payload is empty.</p>
+<span class="font-label-sm text-label-sm text-outline mt-1 uppercase">Select chassis modules or accessories to begin</span>
+</div>
+</div>
+<!-- Drawer Footer / Summary -->
+<div class="p-space-lg bg-surface-container flex flex-col gap-space-md">
+<div class="flex flex-col gap-1.5 font-label-md text-label-md text-on-surface-variant">
+<div class="flex items-center justify-between">
+<span class="">Subtotal Hardware Value</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold" id="cart-subtotal">0 TND</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="">Telemetry &amp; Secure Freight</span>
+<span class="text-primary-container">COMPLIMENTARY</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span class="">Est. Production Dispatch</span>
+<span class="">7-10 Business Days</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 pt-space-xs">
+<button class="w-full py-3.5 px-space-md rounded-lg bg-primary-container text-on-primary-fixed hover:bg-surface-tint font-label-lg text-label-lg uppercase tracking-wider font-semibold transition-all flex items-center justify-center gap-space-xs shadow-lg" id="checkout-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+<span class="">Proceed to Secure Checkout</span>
+</button>
+<button class="w-full py-2.5 px-space-md rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-md text-label-md uppercase tracking-wider transition-all flex items-center justify-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px] text-outline">receipt_long</span>
+<span class="">Generate Enterprise Pro-Forma Invoice</span>
+</button>
+</div>
+</div>
+</div>
+<!-- FLOATING QUICK VIEW / KINESIOLOGY MODAL DIALOG -->
+<dialog class="fixed inset-0 m-auto z-50 bg-transparent p-0 max-w-2xl w-full backdrop:bg-black/80 backdrop:backdrop-blur-sm" id="kinesiology-modal">
+<div class="bg-surface-container-low rounded-2xl overflow-hidden shadow-2xl flex flex-col">
+<div class="p-space-md bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container">view_in_ar</span>
+<span class="font-label-lg text-label-lg uppercase text-on-surface font-bold">3D Kinematic Wireframe Telemetry</span>
+</div>
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface" id="close-modal-btn" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-space-lg flex flex-col items-center justify-center bg-surface-container-lowest">
+<div class="w-full h-72 rounded-xl bg-surface-container-low flex flex-col items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 flex items-center justify-center opacity-30">
+<!-- Inline SVG Wireframe Gimbal -->
+<svg class="w-56 h-56 text-primary-container animate-spin [animation-duration:35s]" fill="none" viewBox="0 0 100 100">
+<circle cx="50" cy="50" r="45" stroke="currentColor" stroke-dasharray="4 2" stroke-width="0.75"></circle>
+<circle cx="50" cy="50" r="30" stroke="currentColor" stroke-width="0.5"></circle>
+<line stroke="currentColor" stroke-width="0.5" x1="50" x2="50" y1="5" y2="95"></line>
+<line stroke="currentColor" stroke-width="0.5" x1="5" x2="95" y1="50" y2="50"></line>
+<polygon points="50,20 75,50 50,80 25,50" stroke="currentColor" stroke-width="0.75"></polygon>
+</svg>
+</div>
+<div class="z-10 flex flex-col items-center text-center p-space-md">
+<span class="font-headline-sm text-headline-sm text-primary-container font-mono font-bold tracking-widest">NX-09-GEN3 // KINEMATIC SIM</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm mt-1">28 Synchronized Brushless Actuator nodes calibrated. Center of mass dynamic balance test: PASS. Latency: 3.8ms.</p>
+</div>
+</div>
+<div class="w-full grid grid-cols-3 gap-2 mt-space-md font-label-sm text-label-sm text-center">
+<div class="p-2 bg-surface-container rounded">
+<span class="text-outline uppercase block">Stance Height</span>
+<span class="text-on-surface font-bold text-headline-sm">178 <span class="text-label-sm text-outline">cm</span></span>
+</div>
+<div class="p-2 bg-surface-container rounded">
+<span class="text-outline uppercase block">Platform Mass</span>
+<span class="text-on-surface font-bold text-headline-sm">68 <span class="text-label-sm text-outline">kg</span></span>
+</div>
+<div class="p-2 bg-surface-container rounded">
+<span class="text-outline uppercase block">Payload Lift</span>
+<span class="text-on-surface font-bold text-headline-sm">22 <span class="text-label-sm text-outline">kg</span></span>
+</div>
+</div>
+</div>
+<div class="p-space-md bg-surface-container flex justify-end">
+<button class="px-space-lg py-2 rounded-lg bg-primary-container text-on-primary-fixed font-label-md text-label-md uppercase font-semibold" id="confirm-modal-btn" type="button">
+          Dismiss Diagnostics
+        </button>
+</div>
+</div>
+</dialog>
+<!-- Interactive Logic Script -->
+<script>
+    (() => {
+      // Currency Switcher State
+      let currentCurrency = 'TND';
+      const rates = {
+        TND: { symbol: 'TND', mult: 1, suffix: true },
+        EUR: { symbol: '€', mult: 0.92, suffix: false },
+        BTC: { symbol: '₿', mult: 0.000011, suffix: false }
+      };
+      const currencyBtns = document.querySelectorAll('.currency-btn');
+      const priceElements = document.querySelectorAll('.product-price');
+
+      function formatMoney(amount) {
+        const { symbol, mult, suffix } = rates[currentCurrency];
+        const converted = currentCurrency === 'BTC'
+          ? (amount * mult).toFixed(4)
+          : Math.round(amount * mult).toLocaleString();
+        return suffix ? `${converted} ${symbol}` : `${symbol}${converted}`;
+      }
+
+      function updatePrices() {
+        priceElements.forEach(el => {
+          const tndVal = parseFloat(el.getAttribute('data-tnd'));
+          if (!isNaN(tndVal)) {
+            el.textContent = formatMoney(tndVal);
+          }
+        });
+      }
+
+      currencyBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          currencyBtns.forEach(b => {
+            b.classList.remove('bg-primary-container', 'text-on-primary-fixed');
+            b.classList.add('text-on-surface-variant');
+          });
+          btn.classList.add('bg-primary-container', 'text-on-primary-fixed');
+          btn.classList.remove('text-on-surface-variant');
+          currentCurrency = btn.getAttribute('data-curr');
+          updatePrices();
+          renderCart();
+        });
+      });
+
+      // Category Filter Handling
+      const catFilters = document.querySelectorAll('.cat-filter');
+      const productItems = document.querySelectorAll('.product-item');
+
+      catFilters.forEach(btn => {
+        btn.addEventListener('click', () => {
+          catFilters.forEach(b => {
+            b.classList.remove('bg-surface-container-high', 'text-primary-container', 'font-semibold');
+            b.classList.add('text-on-surface-variant');
+          });
+          btn.classList.add('bg-surface-container-high', 'text-primary-container', 'font-semibold');
+          btn.classList.remove('text-on-surface-variant');
+
+          const targetCat = btn.getAttribute('data-category');
+          productItems.forEach(item => {
+            if (targetCat === 'all' || item.getAttribute('data-category') === targetCat) {
+              item.style.display = '';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Realtime Search
+      const searchInput = document.getElementById('store-search');
+      searchInput.addEventListener('input', (e) => {
+        const val = e.target.value.toLowerCase();
+        productItems.forEach(item => {
+          const text = item.textContent.toLowerCase();
+          item.style.display = text.includes(val) ? '' : 'none';
+        });
+      });
+
+      // Price Slider Filter
+      const priceSlider = document.getElementById('price-slider');
+      const priceRangeVal = document.getElementById('price-range-val');
+      priceSlider.addEventListener('input', (e) => {
+        const maxVal = parseInt(e.target.value, 10);
+        priceRangeVal.textContent = `50 — ${maxVal.toLocaleString()} TND`;
+        productItems.forEach(item => {
+          const price = parseFloat(item.getAttribute('data-price') || 0);
+          item.style.display = price <= maxVal ? '' : 'none';
+        });
+      });
+
+      // Apparel Size Selector
+      const sizeBtns = document.querySelectorAll('.size-btn');
+      sizeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          sizeBtns.forEach(b => {
+            b.classList.remove('bg-surface-container-highest', 'text-primary-container', 'font-semibold');
+            b.classList.add('bg-surface-container', 'text-on-surface-variant');
+          });
+          btn.classList.add('bg-surface-container-highest', 'text-primary-container', 'font-semibold');
+          btn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+        });
+      });
+
+      // Cart State Management
+      const cart = [];
+      const cartDrawer = document.getElementById('cart-drawer');
+      const closeCartBtn = document.getElementById('close-cart-btn');
+      const cartItemsList = document.getElementById('cart-items-list');
+      const emptyCartMsg = document.getElementById('empty-cart-msg');
+      const cartSubtotal = document.getElementById('cart-subtotal');
+      const headerCartCounter = document.querySelector('header button[aria-label="Cart"] span.font-label-sm');
+
+      function updateCartCounter() {
+        const count = cart.reduce((acc, item) => acc + item.qty, 0);
+        if (headerCartCounter) {
+          headerCartCounter.textContent = count;
+        }
+      }
+
+      function openCart() {
+        cartDrawer.classList.remove('translate-x-full');
+      }
+
+      function closeCart() {
+        cartDrawer.classList.add('translate-x-full');
+      }
+
+      closeCartBtn.addEventListener('click', closeCart);
+
+      // Bind header cart button to open the drawer
+      const headerCartBtn = document.querySelector('header button[aria-label="Cart"]');
+      if (headerCartBtn) {
+        headerCartBtn.addEventListener('click', openCart);
+      }
+
+      function renderCart() {
+        cartItemsList.innerHTML = '';
+        if (cart.length === 0) {
+          cartItemsList.appendChild(emptyCartMsg);
+          cartSubtotal.textContent = formatMoney(0);
+          updateCartCounter();
+          return;
+        }
+
+        let total = 0;
+
+        cart.forEach((item, index) => {
+          const itemCost = item.price * item.qty;
+          total += itemCost;
+          const displayPrice = formatMoney(itemCost);
+
+          const row = document.createElement('div');
+          row.className = 'p-space-sm bg-surface-container rounded-lg flex items-center justify-between gap-space-sm';
+          row.innerHTML = `
+            <div class="flex flex-col min-w-0">
+              <span class="font-label-md text-label-md text-on-surface font-semibold truncate">${item.name}</span>
+              <span class="font-label-sm text-label-sm text-primary-container">${displayPrice} (${item.qty}x)</span>
+            </div>
+            <div class="flex items-center gap-1 shrink-0">
+              <button type="button" class="cart-minus p-1 rounded bg-surface-container-high text-on-surface hover:bg-surface-bright" data-idx="${index}">
+                <span class="material-symbols-outlined text-[14px]">remove</span>
+              </button>
+              <span class="font-label-sm text-label-sm px-1.5">${item.qty}</span>
+              <button type="button" class="cart-plus p-1 rounded bg-surface-container-high text-on-surface hover:bg-surface-bright" data-idx="${index}">
+                <span class="material-symbols-outlined text-[14px]">add</span>
+              </button>
+            </div>
+          `;
+          cartItemsList.appendChild(row);
+        });
+
+        cartSubtotal.textContent = formatMoney(total);
+
+        // Add event listeners for dynamic cart buttons
+        document.querySelectorAll('.cart-minus').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            const idx = parseInt(btn.getAttribute('data-idx'), 10);
+            if (cart[idx].qty > 1) {
+              cart[idx].qty -= 1;
+            } else {
+              cart.splice(idx, 1);
+            }
+            renderCart();
+          });
+        });
+
+        document.querySelectorAll('.cart-plus').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            const idx = parseInt(btn.getAttribute('data-idx'), 10);
+            cart[idx].qty += 1;
+            renderCart();
+          });
+        });
+
+        updateCartCounter();
+      }
+
+      // Add to Cart buttons
+      document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.getAttribute('data-id');
+          const name = btn.getAttribute('data-name');
+          const price = parseFloat(btn.getAttribute('data-price'));
+
+          const existing = cart.find(item => item.id === id);
+          if (existing) {
+            existing.qty += 1;
+          } else {
+            cart.push({ id, name, price, qty: 1 });
+          }
+
+          renderCart();
+          openCart();
+        });
+      });
+
+      // Quick 3D View Modal
+      const modal = document.getElementById('kinesiology-modal');
+      const openModalBtn = document.querySelector('.quick-3d-btn');
+      const closeModalBtn = document.getElementById('close-modal-btn');
+      const confirmModalBtn = document.getElementById('confirm-modal-btn');
+
+      if (openModalBtn && modal) {
+        openModalBtn.addEventListener('click', () => modal.showModal());
+        closeModalBtn.addEventListener('click', () => modal.close());
+        confirmModalBtn.addEventListener('click', () => modal.close());
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest border-t border-white/10"><div class="w-full px-margin py-space-xl"><div class="flex flex-wrap items-center justify-between pb-space-lg mb-space-xl border-b border-white/5 gap-space-md"><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-primary-container animate-pulse shadow-[0_0_10px_#00f0ff]"></span><span class="font-label-sm text-label-sm uppercase tracking-widest text-primary-container">ALL SYSTEMS OPERATIONAL // LATENCY 4ms</span></div><div class="flex items-center gap-space-lg"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">ISO 26262 ASIL-D</span><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">SOC 2 TYPE II</span><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">ITAR COMPLIANT</span><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">CE MARK ROBO-SPEC</span></div></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl mb-space-xl"><div class="lg:col-span-2 flex flex-col gap-space-md pr-space-lg"><div class="flex items-center gap-space-sm"><img alt="NEXUS Humanoid Robotics Logo" class="h-7 w-auto object-contain nx-logo-mark" src="assets/img/nexus-logo.svg"><span class="font-headline-sm text-headline-sm uppercase tracking-wider text-on-surface">NEXUS</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Pioneering advanced synthetic kinesiology and distributed neural motor intelligence. Precision aerospace chassis engineered for terrestrial and extra-planetary deployment.</p><div class="flex flex-col gap-space-xs mt-space-sm"><label class="font-label-sm text-label-sm uppercase tracking-widest text-outline" for="footer-sdk-email">Developer SDK &amp; Neural Firmware Dispatch</label><div class="flex items-center gap-space-xs max-w-md"><input class="w-full px-space-md py-2 bg-surface-container-low border border-outline-variant font-label-md text-label-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container rounded" id="footer-sdk-email" placeholder="developer@enterprise.internal" type="email"><button class="px-space-md py-2 bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider font-semibold rounded hover:bg-primary-container hover:text-on-primary-container transition-colors shrink-0" type="button">Subscribe</button></div></div></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface font-semibold">Platforms</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="robots" href="Robot.html">Chassis Series 09</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="robots" href="Robot.html">Kinesiology Atlas</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="technology" href="technology.html">Hydraulic Myomers</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="technology" href="technology.html">Tactile Skin V3</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="technology" href="technology.html">Battery Architecture</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface font-semibold">Intelligence</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="technology" href="technology.html">Neural Synthesis Core</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="technology" href="technology.html">Spatial Compute Stack</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="applications" href="index.html#applications">Teleoperation Relay</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="applications" href="index.html#applications">Factory Automation</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="applications" href="index.html#applications">Clinical Care Units</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface font-semibold">Corporate</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="about" href="index.html#about">Engineering Team</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="about" href="index.html#about">Mission Governance</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="shop" href="Shop.html">Commercial Fleet Orders</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="index.html#about">Safety Whitepapers</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="index.html#about">Telemetry Privacy</a></div></div><div class="pt-space-lg border-t border-white/5 flex flex-wrap items-center justify-between gap-space-md"><span class="font-label-sm text-label-sm tracking-wider uppercase text-outline">© 2026 NEXUS HUMANOID ROBOTICS INC.</span><div class="flex items-center gap-space-lg"><a class="font-label-sm text-label-sm uppercase tracking-wider text-outline hover:text-on-surface transition-colors" href="technology.html">Telemetry Protocol</a><a class="font-label-sm text-label-sm uppercase tracking-wider text-outline hover:text-on-surface transition-colors" href="index.html#about">Terms of Deployment</a><a class="font-label-sm text-label-sm uppercase tracking-wider text-outline hover:text-on-surface transition-colors" href="Robot.html">System Diagnostics</a></div></div></div></footer>
+
+
+
+
+
+<script>
+(function(){
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var els=[].slice.call(document.querySelectorAll("main .group, main [class*='rounded'][class*='bg-surface']"));
+  if(!("IntersectionObserver" in window) || !els.length) return;
+  els.forEach(function(el){ el.classList.add("nx-reveal"); });
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("is-visible"); io.unobserve(e.target);} });
+  },{threshold:0.12, rootMargin:"0px 0px -40px 0px"});
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script></body></html>

@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>NEXUS Humanoid Robotics</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"secondary-container":"#46494d","tertiary-fixed-dim":"#7bd0ff","error-container":"#93000a","on-primary-fixed-variant":"#004f54","on-surface-variant":"#b9cacb","surface-tint":"#00dbe9","surface-container":"#1d2025","on-secondary":"#2d3135","primary-fixed-dim":"#00dbe9","surface-container-low":"#191c21","on-tertiary":"#00354a","surface-container-highest":"#33353b","on-error-container":"#ffdad6","surface-variant":"#33353b","tertiary-fixed":"#c4e7ff","primary-fixed":"#7df4ff","tertiary":"#eef7ff","background":"#111319","outline":"#849495","on-primary-container":"#006970","inverse-primary":"#006970","inverse-on-surface":"#2e3036","on-tertiary-container":"#00668b","on-tertiary-fixed-variant":"#004c69","secondary-fixed-dim":"#c4c6cb","primary":"#dbfcff","inverse-surface":"#e2e2ea","surface-dim":"#111319","tertiary-container":"#aee0ff","on-secondary-fixed-variant":"#44474b","on-surface":"#e2e2ea","secondary":"#c4c6cb","surface-container-high":"#282a30","on-background":"#e2e2ea","on-primary-fixed":"#002022","outline-variant":"#3b494b","surface-container-lowest":"#0c0e13","on-error":"#690005","surface":"#111319","on-secondary-fixed":"#181c20","surface-bright":"#37393f","error":"#ffb4ab","secondary-fixed":"#e0e2e7","on-secondary-container":"#b6b8bd","on-tertiary-fixed":"#001e2c","on-primary":"#00363a","primary-container":"#00f0ff"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"margin":"2rem","gutter":"1.25rem","space-sm":"0.5rem","space-xl":"3rem","space-md":"1rem","space-lg":"1.5rem","space-xs":"0.25rem"},fontFamily:{"label-lg":["JetBrains Mono"],"display-xl":["Space Grotesk"],"body-sm":["Manrope"],"body-md":["Manrope"],"label-sm":["JetBrains Mono"],"headline-md":["Space Grotesk"],"headline-lg":["Space Grotesk"],"label-md":["JetBrains Mono"],"headline-sm":["Space Grotesk"],"headline-lg-mobile":["Space Grotesk"],"display-xl-mobile":["Space Grotesk"],"body-lg":["Manrope"]},fontSize:{"label-lg":["13px",{"lineHeight":"18px","fontWeight":"500"}],"display-xl":["64px",{"lineHeight":"72px","fontWeight":"700"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}],"label-sm":["9px",{"lineHeight":"12px","fontWeight":"500"}],"headline-md":["28px",{"lineHeight":"36px","fontWeight":"500"}],"headline-lg":["40px",{"lineHeight":"48px","fontWeight":"600"}],"label-md":["11px",{"lineHeight":"16px","fontWeight":"500"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"500"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","fontWeight":"600"}],"display-xl-mobile":["38px",{"lineHeight":"46px","fontWeight":"700"}],"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}]}}}};</script><link rel="stylesheet" href="assets/css/animations.css"></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary"><header class="fixed top-0 left-0 right-0 z-50 w-full backdrop-blur-md bg-surface-container-lowest/85 border-b border-white/10"><div class="h-20 w-full px-margin flex items-center justify-between"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm" data-path="home" href="index.html"><img alt="NEXUS Humanoid Robotics Logo" class="h-8 w-auto object-contain nx-logo-mark" src="assets/img/nexus-logo.svg"/><span class="font-headline-sm text-headline-sm uppercase tracking-wider text-on-surface hidden sm:inline-block">NEXUS</span></a></div><nav class="hidden xl:flex items-center gap-space-xl" data-active-classes="text-primary-container border-b-2 border-primary-container"><a class="font-label-lg text-label-lg tracking-widest uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-sm" data-path="home" href="index.html">Home</a><a class="font-label-lg text-label-lg tracking-widest uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-sm" data-path="about" href="index.html#about">About</a><a class="font-label-lg text-label-lg tracking-widest uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-sm" data-path="robots" href="Robot.html">Robots</a><a aria-current="page" class="font-label-lg tracking-widest uppercase transition-colors py-space-sm text-primary-container border-b-2 border-primary-container" data-path="technology" href="technology.html">Technology</a><a class="font-label-lg text-label-lg tracking-widest uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-sm" data-path="applications" href="index.html#applications">Applications</a><a class="font-label-lg text-label-lg tracking-widest uppercase text-on-surface-variant hover:text-on-surface transition-colors py-space-sm" data-path="shop" href="Shop.html">Shop</a></nav><div class="flex items-center gap-space-md"><button aria-label="Notifications" class="relative p-space-xs text-on-surface-variant hover:text-on-surface transition-colors flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary-container shadow-[0_0_8px_#00f0ff]"></span></button><a aria-label="Cart" href="Shop.html" class="relative p-space-xs text-on-surface-variant hover:text-on-surface transition-colors flex items-center justify-center"><span class="material-symbols-outlined text-[22px]">shopping_bag</span><span class="absolute -top-1 -right-1 font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-surface-container-highest text-primary-container border border-primary-container/40 leading-none">0</span></a><a class="flex items-center gap-space-xs px-space-md py-1.5 rounded-full border border-outline-variant bg-surface-container/60 hover:border-primary-container hover:bg-surface-container-high transition-all text-on-surface group" data-path="login" href="login.html"><span class="material-symbols-outlined text-[18px] text-primary-container group-hover:scale-105 transition-transform">terminal</span><span class="font-label-md text-label-md uppercase tracking-wider text-on-surface">Login</span></a><a href="login.html" aria-label="Account" class="w-8 h-8 rounded-full bg-primary flex items-center justify-center hover:scale-105 transition-transform"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></a></div></div></header><main class="w-full pt-20 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Telemetry Ribbon -->
+<section class="w-full bg-surface-container-lowest px-margin py-space-sm">
+<div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-space-sm font-label-sm text-label-sm uppercase text-outline">
+<div class="flex items-center gap-space-md">
+<span class="flex items-center gap-space-xs text-primary-container">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>
+          SYS.DIAG // KINEMATICS ENGINE v4.88
+        </span>
+<span class="text-on-surface-variant font-label-md">CYCLE FREQ: 1,000 Hz</span>
+</div>
+<div class="flex items-center gap-space-lg">
+<span>BUS: CAN-FD 5Mbps</span>
+<span>LATENCY: 0.94ms</span>
+<span class="text-tertiary-fixed-dim">DOFs: 42 UNCONSTRAINED</span>
+</div>
+</div>
+</section>
+<!-- Hero Section: Split Asymmetric Chassis View -->
+<section class="relative w-full overflow-hidden bg-surface-dim px-margin py-space-xl">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- Left Column: High-density Typography & Positioning -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg z-10">
+<div class="inline-flex items-center gap-space-xs px-space-md py-1 rounded bg-surface-container-high w-fit shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary">Core Systems Architecture</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-lg text-label-lg uppercase tracking-widest text-outline">PHYSICAL EMBODIMENT ENGINE</span>
+<h1 class="font-display-xl text-display-xl tracking-tight text-on-surface">
+            Synthetic Biomechanics <span class="text-primary-container">&amp; Neural</span> Architecture
+          </h1>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+          How NEXUS translates multimodal sensory streams into fluid real-time robotic actuation. By bridging 1,000 Hz dynamic whole-body inverse dynamics with vision-language-action deep neural nets, the NEXUS chassis executes sub-millimeter motor tasks with human-level compliance.
+        </p>
+<!-- Dynamic Stat Strips -->
+<div class="grid grid-cols-3 gap-space-md pt-space-md">
+<div class="p-space-md rounded bg-surface-container-low shadow-sm flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-outline">Control Frequency</span>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg text-on-surface">1,000</span>
+<span class="font-label-md text-label-md text-primary-container">Hz</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Closed-loop balance loop</span>
+</div>
+<div class="p-space-md rounded bg-surface-container-low shadow-sm flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-outline">Optical Latency</span>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg text-on-surface">&lt;4.2</span>
+<span class="font-label-md text-label-md text-primary-container">ms</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">V-SLAM sync speed</span>
+</div>
+<div class="p-space-md rounded bg-surface-container-low shadow-sm flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-outline">Tactile Density</span>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg text-on-surface">100</span>
+<span class="font-label-md text-label-md text-primary-container">nodes</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Per individual finger</span>
+</div>
+</div>
+<!-- Call to actions -->
+<div class="flex flex-wrap items-center gap-space-md pt-space-sm">
+<a class="px-space-lg py-3 rounded bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider font-semibold hover:bg-primary-container transition-colors shadow-md" href="#sdk-section">
+            Inspect SDK Documentation
+          </a>
+<a class="px-space-lg py-3 rounded bg-surface-container-high text-on-surface font-label-md text-label-md uppercase tracking-wider hover:bg-surface-bright transition-colors shadow-sm" href="#pillars-grid">
+            Explore 6 Pillars
+          </a>
+</div>
+</div>
+<!-- Right Column: Monolithic Hardware Visual with Live Telemetry Overlay -->
+<div class="lg:col-span-5 relative flex items-center justify-center">
+<!-- Ambient photonic glow behind chassis image -->
+<div class="absolute w-72 h-72 rounded-full bg-primary-container/10 blur-3xl pointer-events-none"></div>
+<div class="relative w-full max-w-md rounded-xl bg-surface-container-lowest overflow-hidden shadow-xl p-space-xs">
+<!-- Robot Head Visor Frame inspired by reference image -->
+<div class="relative w-full aspect-[4/5] rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover object-center" data-alt="A minimalist humanoid robot torso and head with a high-gloss curved black glass visor illuminated with a sleek white LED light bar around the chin, wearing matte white ceramic and composite chest plating with precision mechanical neck joints, cinematic studio lighting with neon cyan backlight against a dark obsidian tech chamber background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF14MzhDJE2-6Gv0HxTq87-wt5sYfSoyilUBMeKb6WxOLAo44beZDF3jdet-ANUvbHTyeUvGzxVU6bAjE53uFQqIMNqmtrBCf_ldpkg_qv7QTG3AOlheWeltdPv5BEBOeW_PEb6B-OA9aC8dU5qmHsTbhlfkez5bQqZRmmCh6l8NjxU883mFTA9GX90HnxvzHKVrfwrU_z6EnHf8_JTbUJvNvnVPcnQNnbyXBanHtiUFn1hNsGeKFZhg"/>
+<!-- Top HUD Badge -->
+<div class="absolute top-space-md left-space-md bg-surface-container-lowest/85 backdrop-blur-md px-space-md py-1.5 rounded flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">NEXUS-09 // VISOR ARRAYS ACTIVE</span>
+</div>
+<!-- Bottom Floating Gauge Overlays -->
+<div class="absolute bottom-space-md left-space-md right-space-md p-space-md rounded bg-surface-container-lowest/90 backdrop-blur-md flex flex-col gap-space-xs">
+<div class="flex justify-between items-center font-label-sm text-label-sm text-outline uppercase">
+<span>Neural Bandwidth Utilization</span>
+<span class="text-primary-container">88.4%</span>
+</div>
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[88%]"></div>
+</div>
+<div class="flex justify-between items-center font-label-sm text-label-sm text-on-surface-variant pt-1">
+<span>VISION PIPELINE: 240 FPS</span>
+<span>INFERENCE: 3.1ms</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6 CORE TECHNOLOGY PILLARS: Bento Grid Layout -->
+<section class="w-full bg-surface px-margin py-space-xl" id="pillars-grid">
+<div class="max-w-7xl mx-auto flex flex-col gap-space-xl">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-primary-container">
+<span class="material-symbols-outlined text-sm">memory</span>
+<span class="font-label-md text-label-md uppercase tracking-widest">FOUNDATION SUBSYSTEMS</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Six Core Engineering Pillars</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+          Every dimension of the NEXUS platform is architected from clean silicon upwards, merging high-rate physical control with expansive multi-modal intelligence.
+        </p>
+</div>
+<!-- Bento Grid (6 Columns pattern: 3 on row 1, 3 on row 2 with varying scales) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+<!-- Pillar 1: Artificial Intelligence -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-low shadow-sm hover:bg-surface-container transition-all group">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded bg-surface-container-highest flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">PILLAR 01</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Artificial Intelligence</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                End-to-end foundation models trained directly on multi-billion token kinematics and Vision-Language-Action (VLA) corpora, translating high-level semantics straight to motor currents.
+              </p>
+</div>
+</div>
+<div class="mt-space-lg pt-space-md bg-surface-container-lowest/60 rounded p-space-sm flex flex-col gap-space-xs">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-outline uppercase">Neural Weights Param</span>
+<span class="text-primary font-label-md">14.2B DENSE</span>
+</div>
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-outline uppercase">Context Window</span>
+<span class="text-on-surface font-label-md">128K TOKENS</span>
+</div>
+</div>
+</div>
+<!-- Pillar 2: Computer Vision -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-low shadow-sm hover:bg-surface-container transition-all group">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded bg-surface-container-highest flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined">visibility</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">PILLAR 02</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Panoramic Computer Vision</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                8x ultra-high dynamic range (UHDR) cameras embedded seamlessly into the obsidian visor and chassis shoulders, computing dense spatial voxel maps in real-time without bulky mechanical LiDAR.
+              </p>
+</div>
+</div>
+<div class="mt-space-lg pt-space-md bg-surface-container-lowest/60 rounded p-space-sm flex flex-col gap-space-xs">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-outline uppercase">Field of Regard</span>
+<span class="text-primary font-label-md">360° SPHERICAL</span>
+</div>
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-outline uppercase">Depth Resolution</span>
+<span class="text-on-surface font-label-md">0.4mm @ 2.5m</span>
+</div>
+</div>
+</div>
+<!-- Pillar 3: Motion Planning -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-low shadow-sm hover:bg-surface-container transition-all group">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded bg-surface-container-highest flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined">balance</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">PILLAR 03</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Whole-Body Motion Planning</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Dynamic balance controllers calculating nonlinear model-predictive control (NMPC) at 1,000 Hz. Recovers instantly from violent shoves, uneven rubble, and slips on low-friction terrain.
+              </p>
+</div>
+</div>
+<div class="mt-space-lg pt-space-md bg-surface-container-lowest/60 rounded p-space-sm flex flex-col gap-space-xs">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-outline uppercase">Disturbance Recovery</span>
+<span class="text-primary font-label-md">&lt;12ms RETURN</span>
+</div>
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-outline uppercase">Max Payload Carry</span>
+<span class="text-on-surface font-label-md">24.5 kg ARMS</span>
+</div>
+</div>
+</div>
+<!-- Pillar 4: Sensors & Haptics -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-low shadow-sm hover:bg-surface-container transition-all group">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded bg-surface-container-highest flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined">touch_app</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">PILLAR 04</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Sensors &amp; Micro-Haptics</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Multi-axis strain-gauge load cells at every joint axis accompanied by synthetic epidermal tactility arrays across fingertips to register shear friction, micro-texture, and force vectors.
+              </p>
+</div>
+</div>
+<div class="mt-space-lg pt-space-md bg-surface-container-lowest/60 rounded p-space-sm flex flex-col gap-space-xs">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-outline uppercase">Tactile Array</span>
+<span class="text-primary font-label-md">100 SENSORS/FINGER</span>
+</div>
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-outline uppercase">Dynamic Range</span>
+<span class="text-on-surface font-label-md">0.05N - 450N</span>
+</div>
+</div>
+</div>
+<!-- Pillar 5: Autonomous Navigation -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-low shadow-sm hover:bg-surface-container transition-all group">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded bg-surface-container-highest flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined">explore</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">PILLAR 05</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Autonomous Navigation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Sub-millimeter Visual-Inertial SLAM (VI-SLAM) coupled with live semantic voxel grids. Operates entirely inside GPS-denied complex factories, cleanrooms, and congested stairwells.
+              </p>
+</div>
+</div>
+<div class="mt-space-lg pt-space-md bg-surface-container-lowest/60 rounded p-space-sm flex flex-col gap-space-xs">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-outline uppercase">Spatial Drift</span>
+<span class="text-primary font-label-md">&lt;0.02% / 100m</span>
+</div>
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-outline uppercase">Occupancy Grid</span>
+<span class="text-on-surface font-label-md">3D VOXEL 2cm³</span>
+</div>
+</div>
+</div>
+<!-- Pillar 6: Machine Learning & Fleet Sim -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-low shadow-sm hover:bg-surface-container transition-all group">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded bg-surface-container-highest flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined">hub</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">PILLAR 06</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Fleet Sim &amp; Sim-to-Real</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Parallelized GPU cluster environments running 100,000 instances of synthetic physical interaction per day. Domain randomization yields robust zero-shot deployment onto physical units.
+              </p>
+</div>
+</div>
+<div class="mt-space-lg pt-space-md bg-surface-container-lowest/60 rounded p-space-sm flex flex-col gap-space-xs">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-outline uppercase">Synthetic Experience</span>
+<span class="text-primary font-label-md">4.5M HRS / DAY</span>
+</div>
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-outline uppercase">Fleet Sync Frequency</span>
+<span class="text-on-surface font-label-md">EVERY 6 HRS</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SCHEMATIC ACTUATOR EXPLODED DIAGRAM SECTION -->
+<section class="w-full bg-surface-container-lowest px-margin py-space-xl">
+<div class="max-w-7xl mx-auto flex flex-col gap-space-xl">
+<!-- Section Title & Status -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-primary-container">
+<span class="material-symbols-outlined text-sm">settings_input_component</span>
+<span class="font-label-md text-label-md uppercase tracking-widest">ACTUATOR PHYSICAL MATRIX</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Custom Electro-Mechanical Actuation</h2>
+</div>
+<div class="flex items-center gap-space-md text-outline font-label-sm text-label-sm uppercase">
+<span>TOLERANCE: 2.5 MICRONS</span>
+<span>THERMAL ENVELOPE: -20°C TO +65°C</span>
+</div>
+</div>
+<!-- Two Exploded Actuator Showcases (Rotary & Linear) -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-xl">
+<!-- CARD 1: ROTARY ACTUATOR -->
+<div class="flex flex-col rounded-xl bg-surface-container-low overflow-hidden shadow-lg">
+<div class="relative w-full aspect-video bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Technical schematic view of a high-torque robotic rotary actuator with strain wave harmonic gearing, integrated torque sensor, and compact brushless DC motor in an aerospace titanium housing, precision mechanical engineering blueprint aesthetic with dark background and cyan illumination lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3w9qXff-bYC549250PsvpTzq8UxVGE89Hhmx1py0sGvXxqQRsKo6eSEZeuWWMV6FQgcnnKXAKIe2p32n-u0RzKJX9pKKWhfuGwVyZ4PlUrfAWjIjH47Kn9vCXaEwv4G3Wph0e33MRIlYzsqIvOA0yRSX4CrR6fnwHQzdNsN3eyE8a5_cfhhotg5vscapulblyZIZJg-1qroHYj54seO4Du5mlcSEb9AAVd9GrmP_MVQsvg9ZlPhO_XA"/>
+<div class="absolute top-space-md left-space-md px-space-md py-1 rounded bg-surface-container-lowest/80 backdrop-blur-md">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">TYPE: ROTARY STRAIN-WAVE // 01</span>
+</div>
+<div class="absolute bottom-space-md right-space-md px-space-md py-1 rounded bg-surface-container-lowest/80 backdrop-blur-md">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface">PEAK TORQUE: 180 Nm</span>
+</div>
+</div>
+<div class="p-space-lg flex flex-col gap-space-md">
+<div class="flex justify-between items-baseline">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Precision Harmonic Rotary Unit</h3>
+<span class="font-label-md text-label-md text-primary-container">36 UNITS PER CHASSIS</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Engineered with zero-backlash strain-wave gearing and titanium flexsplines, our proprietary rotary assembly integrates dual absolute 19-bit optical encoders on both input and output shafts for absolute position repeatability.
+            </p>
+<!-- Technical Spec Grid -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-sm">
+<div class="p-space-sm rounded bg-surface-container flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Gear Ratio</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">100:1</span>
+</div>
+<div class="p-space-sm rounded bg-surface-container flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Weight-to-Power</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">1.8 kW/kg</span>
+</div>
+<div class="p-space-sm rounded bg-surface-container flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Backlash</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">&lt;0.05 arcmin</span>
+</div>
+<div class="p-space-sm rounded bg-surface-container flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Integrated Brake</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Fail-Safe Spring</span>
+</div>
+</div>
+</div>
+</div>
+<!-- CARD 2: LINEAR ACTUATOR -->
+<div class="flex flex-col rounded-xl bg-surface-container-low overflow-hidden shadow-lg">
+<div class="relative w-full aspect-video bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Detailed engineering cutaway view of an inverted planetary roller screw linear actuator designed for high-load robotic leg joints, featuring custom frameless brushless motor and integrated force transducer, sleek matte ceramic finish with dark industrial ambiance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy5mxQo2rKFsjBEJlIoRJ5DWGWsToidgdmAsx45hQETVCX0X-0sOx7AXThFBjIHQ1IpOl517H1jYdbhICBQGeI0fdVX5aM2r6saWk8k56_E1z64VSuK0wEporcOr4WbMqxu4zKR-kB0Gg4N2ggJJyROXfu5HsGa1e3TXaayF58Ky-vgwZGePyecbBsEkcq8B0qpDPJpE9Bu8Tre6ysrgk-8NVURtFolqmPpaG1YQEBdnL94Ae2E65tuw"/>
+<div class="absolute top-space-md left-space-md px-space-md py-1 rounded bg-surface-container-lowest/80 backdrop-blur-md">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">TYPE: LINEAR ROLLER-SCREW // 02</span>
+</div>
+<div class="absolute bottom-space-md right-space-md px-space-md py-1 rounded bg-surface-container-lowest/80 backdrop-blur-md">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface">PEAK THRUST: 3,400 N</span>
+</div>
+</div>
+<div class="p-space-lg flex flex-col gap-space-md">
+<div class="flex justify-between items-baseline">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Inverted Roller Screw Linear Unit</h3>
+<span class="font-label-md text-label-md text-primary-container">6 UNITS PER CHASSIS</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Designed explicitly for primary load-bearing joints in the lower limbs, knees, and lumbar spine. The planetary roller screw architecture provides unmatched shock load resistance during high-velocity running and jumping impacts.
+            </p>
+<!-- Technical Spec Grid -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-sm">
+<div class="p-space-sm rounded bg-surface-container flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Linear Speed</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">450 mm/s</span>
+</div>
+<div class="p-space-sm rounded bg-surface-container flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Dynamic Rating</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">12 kN shock</span>
+</div>
+<div class="p-space-sm rounded bg-surface-container flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Strain-Gauge Sensor</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Full Wheatstone</span>
+</div>
+<div class="p-space-sm rounded bg-surface-container flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Efficiency</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">&gt;94%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- INTERACTIVE TELEMETRY REAL-TIME VISUALIZER -->
+<section class="w-full bg-surface px-margin py-space-xl">
+<div class="max-w-7xl mx-auto flex flex-col gap-space-lg">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary-container">LIVE SIMULATION BENCH</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Real-Time Joint Telemetry Stream</h2>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-1.5 rounded bg-surface-container-high text-on-surface font-label-md text-label-md uppercase tracking-wider hover:bg-surface-bright flex items-center gap-space-xs transition-colors" id="stream-btn" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary-container">play_arrow</span>
+<span>Pause Stream</span>
+</button>
+</div>
+</div>
+<!-- Telemetry Gauges Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-md">
+<!-- Metric 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm shadow-sm">
+<div class="flex justify-between items-center text-outline font-label-sm text-label-sm">
+<span>KNEE_FLEX_R</span>
+<span class="text-primary-container">NOMINAL</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-lg text-headline-lg text-on-surface" id="tele-torque-1">68.4</span>
+<span class="font-label-md text-label-md text-outline">Nm (Torque)</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary-container transition-all duration-300 w-[58%]" id="tele-bar-1"></div>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm shadow-sm">
+<div class="flex justify-between items-center text-outline font-label-sm text-label-sm">
+<span>CORE_TEMPERATURE</span>
+<span class="text-tertiary-fixed-dim">OPTIMAL</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-lg text-headline-lg text-on-surface" id="tele-temp">39.2</span>
+<span class="font-label-md text-label-md text-outline">°C (Thermal)</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-fixed-dim transition-all duration-300 w-[42%]" id="tele-bar-2"></div>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm shadow-sm">
+<div class="flex justify-between items-center text-outline font-label-sm text-label-sm">
+<span>BUS_VOLTAGE</span>
+<span class="text-primary-container">48.2V</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-lg text-headline-lg text-on-surface" id="tele-volt">98.1</span>
+<span class="font-label-md text-label-md text-outline">% SOC</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary-container transition-all duration-300 w-[98%]" id="tele-bar-3"></div>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm shadow-sm">
+<div class="flex justify-between items-center text-outline font-label-sm text-label-sm">
+<span>OPTICAL_INFERENCE</span>
+<span class="text-primary-container">SYNC 0.9ms</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-lg text-headline-lg text-on-surface" id="tele-fps">240</span>
+<span class="font-label-md text-label-md text-outline">FPS</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary-container transition-all duration-300 w-[95%]" id="tele-bar-4"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- OPEN NEXUS SDK & DEVELOPER ECOSYSTEM -->
+<section class="w-full bg-surface-container-lowest px-margin py-space-xl" id="sdk-section">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+<!-- SDK Info & Documentation Access -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs text-primary-container">
+<span class="material-symbols-outlined text-sm">terminal</span>
+<span class="font-label-md text-label-md uppercase tracking-widest">DEVELOPER ENVIRONMENT</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">
+          Open NEXUS SDK &amp; Robotics Runtime
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Program humanoid behaviors through standard open-source robotics protocols. With first-class ROS2 integration, Python bindings for kinematic trajectory interpolation, and ultra-low-jitter C++ direct-motor interfaces.
+        </p>
+<div class="flex flex-col gap-space-sm pt-space-sm">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary-container text-[20px]">check_circle</span>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface font-semibold">Zero-Copy Shared Memory</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">IPC transport with under 50 microseconds overhead across local cores.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary-container text-[20px]">check_circle</span>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface font-semibold">Physics Sandbox Integration</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Pre-configured simulation assets for NVIDIA Isaac Sim, MuJoCo, and Gazebo Harmonic.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary-container text-[20px]">check_circle</span>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface font-semibold">Safety ASIL-D Compliance Guardrails</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Hardware-enforced joint velocity and kinetic energy limitation algorithms.</p>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-space-md pt-space-md">
+<a class="px-space-md py-2.5 rounded bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider font-semibold hover:bg-primary-container transition-colors shadow-sm flex items-center gap-space-xs" href="technology.html#sdk-section">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Download SDK v2.4</span>
+</a>
+<a class="px-space-md py-2.5 rounded bg-surface-container text-on-surface font-label-md text-label-md uppercase tracking-wider hover:bg-surface-bright transition-colors shadow-sm flex items-center gap-space-xs" href="technology.html#sdk-section">
+<span class="material-symbols-outlined text-[18px]">book</span>
+<span>Read API Whitepaper</span>
+</a>
+</div>
+</div>
+<!-- Live Code Terminal Switcher -->
+<div class="lg:col-span-7 flex flex-col rounded-xl bg-surface-container-low shadow-xl overflow-hidden">
+<!-- Terminal Window Bar -->
+<div class="flex items-center justify-between px-space-md py-3 bg-surface-container border-b-0">
+<div class="flex items-center gap-space-xs">
+<div class="w-3 h-3 rounded-full bg-error/70"></div>
+<div class="w-3 h-3 rounded-full bg-outline/70"></div>
+<div class="w-3 h-3 rounded-full bg-primary-container/70"></div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline ml-space-sm">nexus_controller.py</span>
+</div>
+<!-- Language Tabs -->
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-surface-container-highest text-primary-container font-label-sm text-label-sm uppercase" id="tab-py" onclick="switchTab('py')" type="button">Python</button>
+<button class="px-space-sm py-1 rounded bg-surface-container text-outline hover:text-on-surface font-label-sm text-label-sm uppercase" id="tab-ros" onclick="switchTab('ros')" type="button">ROS2</button>
+<button class="px-space-sm py-1 rounded bg-surface-container text-outline hover:text-on-surface font-label-sm text-label-sm uppercase" id="tab-cpp" onclick="switchTab('cpp')" type="button">C++</button>
+</div>
+</div>
+<!-- Terminal Body -->
+<div class="p-space-lg bg-surface-container-lowest font-label-md text-label-md overflow-x-auto min-h-[340px]">
+<!-- Python Code -->
+<pre class="text-on-surface flex flex-col gap-1 leading-relaxed" id="code-py"><code class="text-outline"># NEXUS SDK v2.4 - High-Rate Inverse Kinematics Pipeline</code>
+<code><span class="text-primary-container">import</span> nexus_robotics <span class="text-primary-container">as</span> nx</code>
+<code><span class="text-primary-container">from</span> nexus_robotics.sensors <span class="text-primary-container">import</span> TactileFingerArray</code>
+<code></code>
+<code>chassis = nx.HumanoidPlatform(serial=<span class="text-tertiary-fixed-dim">"NX-09-DEV-004"</span>, freq_hz=<span class="text-tertiary-fixed-dim">1000</span>)</code>
+<code>chassis.arm_joint_controllers(safety_torque_limit_nm=<span class="text-tertiary-fixed-dim">120.0</span>)</code>
+<code></code>
+<code class="text-outline"># Register high-bandwidth sensory callback</code>
+<code><span class="text-primary-container">def</span> <span class="text-primary">on_tactile_feedback</span>(left_hand: TactileFingerArray):</code>
+<code>    shear_force = left_hand.get_shear_magnitude()</code>
+<code>    <span class="text-primary-container">if</span> shear_force &gt; <span class="text-tertiary-fixed-dim">4.2</span>:</code>
+<code>        chassis.actuators.adjust_grip_compliance(factor=<span class="text-tertiary-fixed-dim">0.85</span>)</code>
+<code></code>
+<code>chassis.subscribe_tactile(callback=on_tactile_feedback)</code>
+<code>chassis.telemetry.stream_realtime(port=<span class="text-tertiary-fixed-dim">8080</span>, enable_compression=<span class="text-primary-container">True</span>)</code>
+<code>print(<span class="text-tertiary-fixed-dim">"[NEXUS] Motor controller nominal. Ready for motion planning."</span>)</code></pre>
+<!-- ROS2 Code -->
+<pre class="text-on-surface flex flex-col gap-1 leading-relaxed hidden" id="code-ros"><code class="text-outline"># NEXUS ROS2 Action Client - Motion Target Node</code>
+<code><span class="text-primary-container">import</span> rclpy</code>
+<code><span class="text-primary-container">from</span> rclpy.node <span class="text-primary-container">import</span> Node</code>
+<code><span class="text-primary-container">from</span> nexus_msgs.msg <span class="text-primary-container">import</span> JointTrajectoryGoal, BalanceStatus</code>
+<code></code>
+<code><span class="text-primary-container">class</span> <span class="text-primary">NexusMotionClient</span>(Node):</code>
+<code>    <span class="text-primary-container">def</span> <span class="text-primary">__init__</span>(self):</code>
+<code>        super().__init__(<span class="text-tertiary-fixed-dim">'nexus_kinematic_evaluator'</span>)</code>
+<code>        self.sub = self.create_subscription(</code>
+<code>            BalanceStatus, <span class="text-tertiary-fixed-dim">'/nexus/chassis/balance_state'</span>,</code>
+<code>            self.balance_callback, <span class="text-tertiary-fixed-dim">10</span>)</code>
+<code>        self.get_logger().info(<span class="text-tertiary-fixed-dim">'Subscribed to 1,000Hz balance feed'</span>)</code></pre>
+<!-- C++ Code -->
+<pre class="text-on-surface flex flex-col gap-1 leading-relaxed hidden" id="code-cpp"><code class="text-outline">// NEXUS Core Ultra-Low Latency Direct Joint Interlink</code>
+<code>#include &lt;nexus/core/kinematics.hpp&gt;</code>
+<code>#include &lt;nexus/hal/can_bus.hpp&gt;</code>
+<code></code>
+<code>int main(int argc, char** argv) {</code>
+<code>    nexus::hal::CanBusSocket can0(<span class="text-tertiary-fixed-dim">"can0"</span>, <span class="text-tertiary-fixed-dim">5000000</span>);</code>
+<code>    nexus::core::JointState state;</code>
+<code>    </code>
+<code>    <span class="text-primary-container">while</span> (true) {</code>
+<code>        can0.read_synchronous(&amp;state, std::chrono::microseconds(<span class="text-tertiary-fixed-dim">900</span>));</code>
+<code>        nexus::core::solve_inverse_dynamics(state);</code>
+<code>    }</code>
+<code>    <span class="text-primary-container">return</span> 0;</code>
+<code>}</code></pre>
+</div>
+<!-- Terminal Status Bar -->
+<div class="px-space-md py-2 bg-surface-container flex items-center justify-between font-label-sm text-label-sm text-outline">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span>SIMULATION CONNECTION: MUJOCO 3.2 RUNNING</span>
+</div>
+<span class="text-on-surface-variant">UTF-8 // LF // PYTHON 3.11</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Client-side Script -->
+<script>
+    function switchTab(lang) {
+      const tabs = ['py', 'ros', 'cpp'];
+      tabs.forEach(t => {
+        const tabEl = document.getElementById('tab-' + t);
+        const codeEl = document.getElementById('code-' + t);
+        if (t === lang) {
+          tabEl.classList.remove('bg-surface-container', 'text-outline');
+          tabEl.classList.add('bg-surface-container-highest', 'text-primary-container');
+          codeEl.classList.remove('hidden');
+        } else {
+          tabEl.classList.add('bg-surface-container', 'text-outline');
+          tabEl.classList.remove('bg-surface-container-highest', 'text-primary-container');
+          codeEl.classList.add('hidden');
+        }
+      });
+    }
+
+    // Telemetry ticker simulation
+    let isStreaming = true;
+    const streamBtn = document.getElementById('stream-btn');
+    if (streamBtn) {
+      streamBtn.addEventListener('click', () => {
+        isStreaming = !isStreaming;
+        streamBtn.querySelector('span:last-child').textContent = isStreaming ? 'Pause Stream' : 'Resume Stream';
+        streamBtn.querySelector('.material-symbols-outlined').textContent = isStreaming ? 'pause' : 'play_arrow';
+      });
+    }
+
+    setInterval(() => {
+      if (!isStreaming) return;
+      const torqueEl = document.getElementById('tele-torque-1');
+      const bar1 = document.getElementById('tele-bar-1');
+      if (torqueEl && bar1) {
+        const val = (65 + Math.random() * 8).toFixed(1);
+        torqueEl.textContent = val;
+        bar1.style.width = Math.min(100, Math.max(30, (val / 120) * 100)) + '%';
+      }
+
+      const tempEl = document.getElementById('tele-temp');
+      if (tempEl) {
+        const temp = (38.8 + Math.random() * 0.8).toFixed(1);
+        tempEl.textContent = temp;
+      }
+    }, 1200);
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest border-t border-white/10"><div class="w-full px-margin py-space-xl"><div class="flex flex-wrap items-center justify-between pb-space-lg mb-space-xl border-b border-white/5 gap-space-md"><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-primary-container animate-pulse shadow-[0_0_10px_#00f0ff]"></span><span class="font-label-sm text-label-sm uppercase tracking-widest text-primary-container">ALL SYSTEMS OPERATIONAL // LATENCY 4ms</span></div><div class="flex items-center gap-space-lg"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">ISO 26262 ASIL-D</span><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">SOC 2 TYPE II</span><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">ITAR COMPLIANT</span><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">CE MARK ROBO-SPEC</span></div></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl mb-space-xl"><div class="lg:col-span-2 flex flex-col gap-space-md pr-space-lg"><div class="flex items-center gap-space-sm"><img alt="NEXUS Humanoid Robotics Logo" class="h-7 w-auto object-contain nx-logo-mark" src="assets/img/nexus-logo.svg"/><span class="font-headline-sm text-headline-sm uppercase tracking-wider text-on-surface">NEXUS</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Pioneering advanced synthetic kinesiology and distributed neural motor intelligence. Precision aerospace chassis engineered for terrestrial and extra-planetary deployment.</p><div class="flex flex-col gap-space-xs mt-space-sm"><label class="font-label-sm text-label-sm uppercase tracking-widest text-outline" for="footer-sdk-email">Developer SDK &amp; Neural Firmware Dispatch</label><div class="flex items-center gap-space-xs max-w-md"><input class="w-full px-space-md py-2 bg-surface-container-low border border-outline-variant font-label-md text-label-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container rounded" id="footer-sdk-email" placeholder="developer@enterprise.internal" type="email"/><button class="px-space-md py-2 bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider font-semibold rounded hover:bg-primary-container hover:text-on-primary-container transition-colors shrink-0" type="button">Subscribe</button></div></div></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface font-semibold">Platforms</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="robots" href="Robot.html">Chassis Series 09</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="robots" href="Robot.html">Kinesiology Atlas</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="technology" href="technology.html">Hydraulic Myomers</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="technology" href="technology.html">Tactile Skin V3</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="technology" href="technology.html">Battery Architecture</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface font-semibold">Intelligence</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="technology" href="technology.html">Neural Synthesis Core</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="technology" href="technology.html">Spatial Compute Stack</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="applications" href="index.html#applications">Teleoperation Relay</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="applications" href="index.html#applications">Factory Automation</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="applications" href="index.html#applications">Clinical Care Units</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface font-semibold">Corporate</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="about" href="index.html#about">Engineering Team</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="about" href="index.html#about">Mission Governance</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="shop" href="Shop.html">Commercial Fleet Orders</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="index.html#about">Safety Whitepapers</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="index.html#about">Telemetry Privacy</a></div></div><div class="pt-space-lg border-t border-white/5 flex flex-wrap items-center justify-between gap-space-md"><span class="font-label-sm text-label-sm tracking-wider uppercase text-outline">© 2026 NEXUS HUMANOID ROBOTICS INC.</span><div class="flex items-center gap-space-lg"><a class="font-label-sm text-label-sm uppercase tracking-wider text-outline hover:text-on-surface transition-colors" href="technology.html">Telemetry Protocol</a><a class="font-label-sm text-label-sm uppercase tracking-wider text-outline hover:text-on-surface transition-colors" href="index.html#about">Terms of Deployment</a><a class="font-label-sm text-label-sm uppercase tracking-wider text-outline hover:text-on-surface transition-colors" href="Robot.html">System Diagnostics</a></div></div></div></footer><script>
+(function(){
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var els=[].slice.call(document.querySelectorAll("main .group, main [class*='rounded'][class*='bg-surface']"));
+  if(!("IntersectionObserver" in window) || !els.length) return;
+  els.forEach(function(el){ el.classList.add("nx-reveal"); });
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("is-visible"); io.unobserve(e.target);} });
+  },{threshold:0.12, rootMargin:"0px 0px -40px 0px"});
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script></body></html>

@@ -1,0 +1,221 @@
+/* NEXUS — shared motion & interaction polish */
+:root {
+  --nx-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --nx-ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --nx-cyan: #00f0ff;
+  --nx-cyan-dim: rgba(0, 240, 255, 0.35);
+  --nx-cyan-glow: rgba(0, 240, 255, 0.18);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset anchors under fixed header */
+#applications,
+#about,
+#sdk-section,
+#pillars-grid {
+  scroll-margin-top: 6.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Page enter */
+@keyframes nx-fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes nx-logo-pulse {
+  0%, 100% { filter: drop-shadow(0 0 0 transparent); }
+  50% { filter: drop-shadow(0 0 10px var(--nx-cyan-dim)); }
+}
+
+@keyframes nx-shimmer {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+body {
+  animation: nx-fade-up 0.55s var(--nx-ease) both;
+}
+
+/* Logo */
+.nx-logo,
+img[alt*="NEXUS"][alt*="Logo"],
+header a[data-path="home"] img,
+footer img[alt*="NEXUS"] {
+  transition: transform 0.35s var(--nx-ease), filter 0.35s var(--nx-ease);
+}
+
+header a[data-path="home"]:hover img,
+footer .flex.items-center:hover img[alt*="NEXUS"],
+a:hover > .nx-logo {
+  transform: scale(1.06) rotate(-2deg);
+  filter: drop-shadow(0 0 12px var(--nx-cyan-dim));
+}
+
+.nx-logo-mark {
+  animation: nx-logo-pulse 3.5s var(--nx-ease-soft) infinite;
+}
+
+/* Links */
+a:not([class*="no-motion"]) {
+  transition:
+    color 0.28s var(--nx-ease),
+    border-color 0.28s var(--nx-ease),
+    background-color 0.28s var(--nx-ease),
+    box-shadow 0.35s var(--nx-ease),
+    transform 0.28s var(--nx-ease),
+    opacity 0.28s var(--nx-ease);
+}
+
+nav a {
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--nx-cyan);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s var(--nx-ease);
+  opacity: 0.9;
+}
+
+nav a:hover::after,
+nav a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+nav a[aria-current="page"] {
+  text-shadow: 0 0 18px var(--nx-cyan-glow);
+}
+
+/* Buttons & interactive controls */
+button,
+[type="button"],
+[type="submit"],
+a[class*="rounded"],
+a[class*="bg-primary"],
+a[class*="border"] {
+  transition:
+    transform 0.28s var(--nx-ease),
+    box-shadow 0.35s var(--nx-ease),
+    background-color 0.28s var(--nx-ease),
+    border-color 0.28s var(--nx-ease),
+    color 0.28s var(--nx-ease),
+    filter 0.28s var(--nx-ease) !important;
+}
+
+button:hover:not(:disabled),
+[type="button"]:hover:not(:disabled),
+[type="submit"]:hover:not(:disabled),
+a.bg-primary:hover,
+a[class*="bg-primary"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px var(--nx-cyan-glow), 0 0 0 1px var(--nx-cyan-dim);
+}
+
+button:active:not(:disabled),
+[type="button"]:active:not(:disabled),
+[type="submit"]:active:not(:disabled) {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Cards & elevated panels */
+[class*="group"],
+.nx-card,
+main [class*="rounded"][class*="bg-surface"],
+main [class*="border"][class*="bg-surface"] {
+  transition:
+    transform 0.4s var(--nx-ease),
+    box-shadow 0.4s var(--nx-ease),
+    border-color 0.35s var(--nx-ease),
+    background-color 0.35s var(--nx-ease);
+}
+
+.group:hover,
+.nx-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35), 0 0 0 1px var(--nx-cyan-glow);
+}
+
+/* Images inside interactive groups */
+.group img,
+.nx-card img {
+  transition: transform 0.6s var(--nx-ease), filter 0.4s var(--nx-ease);
+}
+
+/* Form fields */
+input,
+select,
+textarea {
+  transition:
+    border-color 0.28s var(--nx-ease),
+    background-color 0.28s var(--nx-ease),
+    box-shadow 0.28s var(--nx-ease),
+    transform 0.2s var(--nx-ease) !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  box-shadow: 0 0 0 2px var(--nx-cyan-dim), 0 0 20px var(--nx-cyan-glow) !important;
+}
+
+/* Icon buttons in header */
+header button:hover {
+  color: var(--nx-cyan);
+  transform: translateY(-1px);
+}
+
+header button:hover .material-symbols-outlined {
+  filter: drop-shadow(0 0 8px var(--nx-cyan-dim));
+}
+
+/* Footer link lift */
+footer a:hover {
+  transform: translateX(3px);
+  color: #dbfcff;
+}
+
+/* Reveal on scroll helper */
+.nx-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--nx-ease), transform 0.7s var(--nx-ease);
+}
+
+.nx-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* CTA shimmer accent */
+.nx-cta-shimmer {
+  background-size: 200% auto;
+  background-image: linear-gradient(
+    110deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.18) 40%,
+    transparent 60%
+  );
+}
+
+.nx-cta-shimmer:hover {
+  animation: nx-shimmer 1.2s var(--nx-ease-soft);
+}

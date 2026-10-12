@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="NEXUS Humanoid Robotics">
+  <defs>
+    <linearGradient id="nx-g" x1="8" y1="6" x2="56" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#7DF4FF"/>
+      <stop offset="55%" stop-color="#00F0FF"/>
+      <stop offset="100%" stop-color="#00DBE9"/>
+    </linearGradient>
+    <linearGradient id="nx-core" x1="24" y1="20" x2="40" y2="44" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#DBFCFF"/>
+      <stop offset="100%" stop-color="#00F0FF"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer chassis frame -->
+  <path fill="none" stroke="url(#nx-g)" stroke-width="2.2" stroke-linejoin="round"
+        d="M18 8h28l10 10v28l-10 10H18L8 46V18L18 8z"/>
+  <!-- Inner N / neural path -->
+  <path fill="none" stroke="url(#nx-g)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"
+        d="M22 46V18l20 28V18"/>
+  <!-- Visor / sensor node -->
+  <circle cx="32" cy="32" r="3.2" fill="url(#nx-core)"/>
+  <circle cx="32" cy="32" r="6.5" fill="none" stroke="#00F0FF" stroke-width="1" opacity="0.55"/>
+  <!-- Corner telemetry ticks -->
+  <path fill="none" stroke="#00F0FF" stroke-width="1.4" stroke-linecap="round" opacity="0.85"
+        d="M14 14h6M14 14v6M50 14h-6M50 14v6M14 50h6M14 50v-6M50 50h-6M50 50v-6"/>
+</svg>

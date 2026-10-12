@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_blank" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Manrope:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"secondary":"#c4c6cb","primary":"#dbfcff","surface-tint":"#00dbe9","on-error":"#690005","secondary-fixed":"#e0e2e7","primary-container":"#00f0ff","error":"#ffb4ab","tertiary-fixed-dim":"#7bd0ff","surface-container-high":"#282a30","outline-variant":"#3b494b","error-container":"#93000a","surface-container":"#1d2025","on-tertiary-fixed-variant":"#004c69","on-secondary":"#2d3135","on-tertiary-container":"#00668b","on-surface-variant":"#b9cacb","on-primary-fixed":"#002022","background":"#111319","on-secondary-fixed":"#181c20","secondary-container":"#46494d","tertiary-container":"#aee0ff","on-surface":"#e2e2ea","on-primary-fixed-variant":"#004f54","inverse-on-surface":"#2e3036","tertiary":"#eef7ff","surface-dim":"#111319","surface":"#111319","on-secondary-container":"#b6b8bd","primary-fixed-dim":"#00dbe9","outline":"#849495","on-error-container":"#ffdad6","on-tertiary-fixed":"#001e2c","on-background":"#e2e2ea","surface-bright":"#37393f","on-tertiary":"#00354a","tertiary-fixed":"#c4e7ff","surface-container-lowest":"#0c0e13","surface-container-highest":"#33353b","primary-fixed":"#7df4ff","on-primary-container":"#006970","inverse-primary":"#006970","on-secondary-fixed-variant":"#44474b","on-primary":"#00363a","secondary-fixed-dim":"#c4c6cb","surface-variant":"#33353b","surface-container-low":"#191c21","inverse-surface":"#e2e2ea"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-xs":"0.25rem","space-md":"1rem","margin":"2rem","space-lg":"1.5rem","space-sm":"0.5rem","space-xl":"3rem","gutter":"1.25rem"},fontFamily:{"headline-sm":["Space Grotesk"],"body-lg":["Manrope"],"label-sm":["JetBrains Mono"],"headline-lg-mobile":["Space Grotesk"],"label-lg":["JetBrains Mono"],"body-md":["Manrope"],"headline-lg":["Space Grotesk"],"body-sm":["Manrope"],"headline-md":["Space Grotesk"],"label-md":["JetBrains Mono"],"display-xl-mobile":["Space Grotesk"],"display-xl":["Space Grotesk"]},fontSize:{"headline-sm":["20px",{lineHeight:"28px",fontWeight:"500"}],"body-lg":["16px",{lineHeight:"26px",fontWeight:"400"}],"label-sm":["9px",{lineHeight:"12px",fontWeight:"500"}],"headline-lg-mobile":["28px",{lineHeight:"36px",fontWeight:"600"}],"label-lg":["13px",{lineHeight:"18px",fontWeight:"500"}],"body-md":["14px",{lineHeight:"22px",fontWeight:"400"}],"headline-lg":["40px",{lineHeight:"48px",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"18px",fontWeight:"400"}],"headline-md":["28px",{lineHeight:"36px",fontWeight:"500"}],"label-md":["11px",{lineHeight:"16px",fontWeight:"500"}],"display-xl-mobile":["38px",{lineHeight:"46px",fontWeight:"700"}],"display-xl":["64px",{lineHeight:"72px",fontWeight:"700"}]}}}};</script><link rel="stylesheet" href="assets/css/animations.css"></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen flex flex-col justify-between"><header class="w-full px-6 py-4 flex items-center justify-between max-w-7xl mx-auto"><a class="flex items-center gap-space-sm" href="index.html"><img src="assets/img/nexus-logo.svg" alt="NEXUS Humanoid Robotics Logo" class="h-8 w-auto object-contain nx-logo-mark"><span class="font-headline-sm text-headline-sm tracking-wider uppercase text-primary font-bold">NEXUS</span></a><a class="flex items-center gap-space-xs font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors" href="index.html"><span class="material-symbols-outlined text-[16px]">arrow_back</span><span>Back to Main Site</span></a></header><main class="w-full flex-1 flex items-center justify-center p-6 bg-surface"><div class="flex flex-col w-full max-w-7xl mx-auto py-4 relative">
+<div class="absolute -top-24 left-1/2 -translate-x-1/2 w-full max-w-4xl h-96 bg-gradient-to-b from-primary-container/10 via-surface-tint/5 to-transparent blur-3xl pointer-events-none -z-10"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Asymmetric Chassis: Visual Model & Telemetry Clearance Node -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<!-- Primary Robotic Asset Viewport Card -->
+<div class="relative bg-surface-container-low rounded-xl overflow-hidden p-6 shadow-xl flex flex-col justify-between min-h-[580px]">
+<!-- Top Telemetry Status Stream -->
+<div class="flex items-center justify-between pb-4">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse shadow-[0_0_8px_#00f0ff]"></span>
+<span class="font-label-sm text-label-sm tracking-widest text-primary-container uppercase">UNIT // ATLAS-V4 PROTOTYPE</span>
+</div>
+<div class="font-label-sm text-label-sm text-outline tracking-wider">
+            SYNTH: 99.84%
+          </div>
+</div>
+<!-- Rendered Humanoid Asset Graphic (Matched to User Inspiration) -->
+<div class="relative my-auto flex items-center justify-center py-4">
+<div class="relative w-full aspect-[4/5] rounded-lg overflow-hidden bg-surface-container-lowest flex items-center justify-center">
+<img class="w-full h-full object-cover object-top" data-alt="Monolithic white composite humanoid robot standing in an obsidian dark room. Sleek ceramic armor plating, seamless carbon fiber flex joints, gloss black optical visor emitting a faint horizontal cyan line. Ultra clean high-tech aerospace aesthetic, cinematic dramatic studio rim lighting, matte dark grey architectural background, hyper-realistic 8k industrial design render." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq4qVpqOAvDbqyJTmLhmSBCrHUpoIbNS53EqPx4rpZIMFLjYqCMldNUqgf7WPcV46_4pZgQrrvALj01O4CsOH7kE5WGHIbEQJ56-OhQ2u-mIIj5qP1msMIgYYvnfagebPcik5hclSYgwjK4Pq5pYpfnHX68lHE_gC78Qv0kVFbfrHONj8G3DbgXqdHrUqSqmM8ATNStSJG21TgNUmh5Xb71ciHOsL2s_LM5hOszb3CK-bvfiOkrI3xbg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-surface-container-low/30 pointer-events-none"></div>
+<!-- Realtime Calibration Reticle Overlay -->
+<div class="absolute top-4 left-4 font-label-sm text-label-sm text-primary/80 bg-surface-container-lowest/80 px-2 py-1 rounded backdrop-blur">
+              NODE: NEURAL_CHASSIS_01
+            </div>
+<div class="absolute bottom-4 right-4 flex flex-col items-end gap-1 font-label-sm text-label-sm text-on-surface-variant bg-surface-container-lowest/80 px-2 py-1 rounded backdrop-blur">
+<span class="text-primary-container">SYS_CAL: OK</span>
+<span>TORQUE_BUS: NOMINAL</span>
+</div>
+</div>
+</div>
+<!-- Lower System Diagnostics Ribbons -->
+<div class="space-y-3 pt-4">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>NEURAL SYNC CAPACITY</span>
+<span class="text-primary font-bold">102.4 PFLOPS</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full w-4/5 shadow-[0_0_10px_#00f0ff]"></div>
+</div>
+<div class="grid grid-cols-2 gap-3 pt-2">
+<div class="p-3 bg-surface-container rounded flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline">HARDWARE LEVEL</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">GEN 4.8</span>
+</div>
+<div class="p-3 bg-surface-container rounded flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline">SEC CLEARANCE</span>
+<span class="font-headline-sm text-headline-sm text-primary-container">LVL 00 (ROOT)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Certifications Card -->
+<div class="p-4 bg-surface-container-low rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-lg">verified_user</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-medium uppercase">Automated 2FA Setup</span>
+<span class="font-label-sm text-label-sm text-outline">FIDO2 &amp; Hardware Token Compatible</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-primary rounded uppercase">Ready</span>
+</div>
+</div>
+<!-- Right Chassis: Operator Dossier Form & Security Matrix -->
+<div class="lg:col-span-7 flex flex-col">
+<div class="bg-surface-container-low rounded-xl p-8 sm:p-10 shadow-xl relative backdrop-blur-sm">
+<!-- Chassis Module Header -->
+<div class="space-y-2 mb-8">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm tracking-widest text-primary-container uppercase">
+<span class="material-symbols-outlined text-[14px]">terminal</span>
+<span>SEC-OP // PROTOCOL REGISTRATION</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">INITIALIZE OPERATOR DOSSIER</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+            Configure root credentials for fleet orchestration, low-latency teleoperation nodes, and autonomous kinematic monitoring.
+          </p>
+</div>
+<!-- Registration Entry System -->
+<form class="space-y-6" id="registration-form" onsubmit="event.preventDefault(); handleRegistration();">
+<!-- Identity Fields: Row 1 -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<!-- Full Name / Lead Engineer -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm uppercase text-secondary font-medium tracking-wide flex items-center justify-between" for="lead-engineer-name">
+<span>Lead Engineer Name</span>
+<span class="text-outline">OPERATOR_ID</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[18px] pointer-events-none">badge</span>
+<input class="w-full bg-surface-container-lowest text-on-surface font-label-md text-label-md pl-10 pr-4 py-3 rounded outline-none focus:bg-surface-container focus:ring-1 focus:ring-primary-container transition-all placeholder:text-outline-variant" id="lead-engineer-name" placeholder="Dr. Elena Vance" required="" type="text"/>
+</div>
+</div>
+<!-- Organization / Enterprise Email -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm uppercase text-secondary font-medium tracking-wide flex items-center justify-between" for="enterprise-email">
+<span>Enterprise Corporate Email</span>
+<span class="text-outline text-label-sm" id="domain-indicator">DOMAIN REQ.</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[18px] pointer-events-none">alternate_email</span>
+<input class="w-full bg-surface-container-lowest text-on-surface font-label-md text-label-md pl-10 pr-10 py-3 rounded outline-none focus:bg-surface-container focus:ring-1 focus:ring-primary-container transition-all placeholder:text-outline-variant" id="enterprise-email" placeholder="e.vance@blackmesa.internal" required="" type="email"/>
+<span class="material-symbols-outlined absolute right-3 text-outline text-[18px] hidden pointer-events-none" id="email-valid-icon">check_circle</span>
+</div>
+</div>
+</div>
+<!-- Research Institution / Facility -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm uppercase text-secondary font-medium tracking-wide flex items-center justify-between" for="institution-name">
+<span>Organization / Research Institution</span>
+<span class="text-outline">FACILITY_SITE</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[18px] pointer-events-none">corporate_fare</span>
+<input class="w-full bg-surface-container-lowest text-on-surface font-label-md text-label-md pl-10 pr-4 py-3 rounded outline-none focus:bg-surface-container focus:ring-1 focus:ring-primary-container transition-all placeholder:text-outline-variant" id="institution-name" placeholder="Global Robotics Core &amp; Synthetic Systems Lab" required="" type="text"/>
+</div>
+</div>
+<!-- Password Entry System with Dynamic Telemetry -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<!-- Access Password -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm uppercase text-secondary font-medium tracking-wide flex items-center justify-between" for="access-password">
+<span>Access Password</span>
+<span class="text-outline" id="strength-label">0/4 ENTROPY</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[18px] pointer-events-none">key</span>
+<input class="w-full bg-surface-container-lowest text-on-surface font-label-md text-label-md pl-10 pr-10 py-3 rounded outline-none focus:bg-surface-container focus:ring-1 focus:ring-primary-container transition-all placeholder:text-outline-variant" id="access-password" placeholder="••••••••••••" required="" type="password"/>
+<button class="absolute right-3 text-outline hover:text-primary transition-colors" onclick="togglePassVisibility('access-password', this)" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+<!-- 4-Level Dynamic Strength Meter -->
+<div class="grid grid-cols-4 gap-1.5 mt-1.5">
+<div class="h-1 rounded-full bg-surface-container-highest transition-all duration-300" id="bar-entropy"></div>
+<div class="h-1 rounded-full bg-surface-container-highest transition-all duration-300" id="bar-upper"></div>
+<div class="h-1 rounded-full bg-surface-container-highest transition-all duration-300" id="bar-number"></div>
+<div class="h-1 rounded-full bg-surface-container-highest transition-all duration-300" id="bar-special"></div>
+</div>
+<!-- Rules Micro Badges -->
+<div class="grid grid-cols-2 gap-1 mt-1 font-label-sm text-label-sm">
+<div class="text-outline flex items-center gap-1" id="rule-length">
+<span class="w-1 h-1 rounded-full bg-outline"></span> 8+ Chars
+                </div>
+<div class="text-outline flex items-center gap-1" id="rule-upper">
+<span class="w-1 h-1 rounded-full bg-outline"></span> Uppercase
+                </div>
+<div class="text-outline flex items-center gap-1" id="rule-number">
+<span class="w-1 h-1 rounded-full bg-outline"></span> Numeric
+                </div>
+<div class="text-outline flex items-center gap-1" id="rule-special">
+<span class="w-1 h-1 rounded-full bg-outline"></span> Special Char
+                </div>
+</div>
+</div>
+<!-- Confirm Password -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm uppercase text-secondary font-medium tracking-wide flex items-center justify-between" for="confirm-password">
+<span>Confirm Master Key</span>
+<span class="text-outline" id="match-status-text">UNVERIFIED</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[18px] pointer-events-none">lock</span>
+<input class="w-full bg-surface-container-lowest text-on-surface font-label-md text-label-md pl-10 pr-10 py-3 rounded outline-none focus:bg-surface-container focus:ring-1 focus:ring-primary-container transition-all placeholder:text-outline-variant" id="confirm-password" placeholder="••••••••••••" required="" type="password"/>
+<button class="absolute right-3 text-outline hover:text-primary transition-colors" onclick="togglePassVisibility('confirm-password', this)" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+<!-- Instant Match Check Indicator Module -->
+<div class="p-2.5 bg-surface-container rounded mt-1.5 flex items-center justify-between" id="match-container">
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-outline" id="match-icon">pending</span>
+<span id="match-description">Awaiting identical key matching</span>
+</div>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-outline uppercase" id="match-chip">IDLE</span>
+</div>
+</div>
+</div>
+<!-- Protocol Checkboxes & Safety Agreements -->
+<div class="space-y-3 pt-2">
+<!-- ISO Checkbox -->
+<label class="group flex items-start gap-3 p-3 bg-surface-container rounded cursor-pointer transition-colors hover:bg-surface-container-high">
+<div class="relative flex items-center justify-center mt-0.5">
+<input class="peer sr-only" id="check-iso" required="" type="checkbox"/>
+<div class="w-4 h-4 rounded-sm bg-surface-container-lowest peer-checked:bg-primary-container transition-all flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-on-primary font-bold opacity-0 peer-checked:opacity-100">check</span>
+</div>
+</div>
+<div class="flex flex-col text-body-sm font-body-sm">
+<span class="text-on-surface font-medium">Accept Autonomous Robotics Operational Protocol &amp; Fleet Safety</span>
+<span class="text-outline font-label-sm text-label-sm mt-0.5">Compliant with ISO 10218-1/2 robotic workcell safeguard procedures and failsafe standards.</span>
+</div>
+</label>
+<!-- Multi-Factor Alerts Checkbox -->
+<label class="group flex items-start gap-3 p-3 bg-surface-container rounded cursor-pointer transition-colors hover:bg-surface-container-high">
+<div class="relative flex items-center justify-center mt-0.5">
+<input checked="" class="peer sr-only" id="check-mfa" type="checkbox"/>
+<div class="w-4 h-4 rounded-sm bg-surface-container-lowest peer-checked:bg-primary-container transition-all flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-on-primary font-bold opacity-0 peer-checked:opacity-100">check</span>
+</div>
+</div>
+<div class="flex flex-col text-body-sm font-body-sm">
+<span class="text-on-surface font-medium">Enable Multi-Factor Telemetry Alerts &amp; Push Verification</span>
+<span class="text-outline font-label-sm text-label-sm mt-0.5">Deliver emergency hardware token challenge events to authenticated SMS &amp; TOTP channels.</span>
+</div>
+</label>
+</div>
+<!-- Actions & CTA Deploy Button -->
+<div class="pt-2 space-y-4">
+<button class="relative w-full py-4 px-6 bg-primary-container hover:bg-primary text-on-primary font-headline-sm text-headline-sm uppercase tracking-wider rounded transition-all duration-300 shadow-[0_0_24px_rgba(0,240,255,0.35)] hover:shadow-[0_0_36px_rgba(0,240,255,0.6)] flex items-center justify-center gap-3 group active:scale-[0.99]" id="deploy-btn" type="submit">
+<span class="material-symbols-outlined text-xl transition-transform group-hover:rotate-45">bolt</span>
+<span>DEPLOY CREDENTIALS &amp; INITIALIZE ACCOUNT</span>
+</button>
+<!-- Return to Login Option -->
+<div class="flex items-center justify-center gap-2 pt-2 text-center">
+<span class="font-label-md text-label-md text-on-surface-variant">Already possess verified fleet clearance?</span>
+<a class="font-label-md text-label-md text-primary-container hover:underline tracking-wide uppercase font-medium flex items-center gap-1" href="login.html">
+<span>Authenticate here</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</form>
+<!-- Notification Toast Display -->
+<div class="hidden mt-6 p-4 rounded bg-primary-container/10 text-primary-container font-label-sm text-label-sm flex items-center gap-3" id="feedback-banner">
+<span class="material-symbols-outlined text-lg">memory</span>
+<span id="feedback-text">OPERATOR_INITIALIZATION_SUCCESSFUL: Forwarding to Security Key Ceremony...</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  const passwordInput = document.getElementById('access-password');
+  const confirmInput = document.getElementById('confirm-password');
+  const emailInput = document.getElementById('enterprise-email');
+  
+  const barEntropy = document.getElementById('bar-entropy');
+  const barUpper = document.getElementById('bar-upper');
+  const barNumber = document.getElementById('bar-number');
+  const barSpecial = document.getElementById('bar-special');
+  const strengthLabel = document.getElementById('strength-label');
+
+  const ruleLength = document.getElementById('rule-length');
+  const ruleUpper = document.getElementById('rule-upper');
+  const ruleNumber = document.getElementById('rule-number');
+  const ruleSpecial = document.getElementById('rule-special');
+
+  const matchStatusText = document.getElementById('match-status-text');
+  const matchIcon = document.getElementById('match-icon');
+  const matchDescription = document.getElementById('match-description');
+  const matchChip = document.getElementById('match-chip');
+
+  const emailValidIcon = document.getElementById('email-valid-icon');
+  const domainIndicator = document.getElementById('domain-indicator');
+
+  function calculateStrength(pwd) {
+    let score = 0;
+    const hasLen = pwd.length >= 8;
+    const hasUpper = /[A-Z]/.test(pwd);
+    const hasNum = /[0-9]/.test(pwd);
+    const hasSpec = /[^A-Za-z0-9]/.test(pwd);
+
+    updateRule(ruleLength, hasLen);
+    updateRule(ruleUpper, hasUpper);
+    updateRule(ruleNumber, hasNum);
+    updateRule(ruleSpecial, hasSpec);
+
+    if (hasLen) score++;
+    if (hasUpper) score++;
+    if (hasNum) score++;
+    if (hasSpec) score++;
+
+    return { score, hasLen, hasUpper, hasNum, hasSpec };
+  }
+
+  function updateRule(element, passed) {
+    const dot = element.querySelector('span');
+    if (passed) {
+      element.className = 'text-primary-container flex items-center gap-1';
+      dot.className = 'w-1 h-1 rounded-full bg-primary-container shadow-[0_0_6px_#00f0ff]';
+    } else {
+      element.className = 'text-outline flex items-center gap-1';
+      dot.className = 'w-1 h-1 rounded-full bg-outline';
+    }
+  }
+
+  function updateStrengthMeter() {
+    const val = passwordInput.value;
+    if (!val) {
+      strengthLabel.textContent = '0/4 ENTROPY';
+      strengthLabel.className = 'text-outline';
+      [barEntropy, barUpper, barNumber, barSpecial].forEach(b => b.className = 'h-1 rounded-full bg-surface-container-highest transition-all duration-300');
+      return;
+    }
+
+    const { score } = calculateStrength(val);
+    strengthLabel.textContent = `${score}/4 ENTROPY`;
+
+    const bars = [barEntropy, barUpper, barNumber, barSpecial];
+    bars.forEach((bar, index) => {
+      if (index < score) {
+        if (score <= 2) {
+          bar.className = 'h-1 rounded-full bg-error transition-all duration-300';
+          strengthLabel.className = 'text-error font-medium';
+        } else if (score === 3) {
+          bar.className = 'h-1 rounded-full bg-tertiary-fixed-dim transition-all duration-300';
+          strengthLabel.className = 'text-tertiary-fixed-dim font-medium';
+        } else {
+          bar.className = 'h-1 rounded-full bg-primary-container shadow-[0_0_8px_#00f0ff] transition-all duration-300';
+          strengthLabel.className = 'text-primary-container font-medium';
+        }
+      } else {
+        bar.className = 'h-1 rounded-full bg-surface-container-highest transition-all duration-300';
+      }
+    });
+
+    validateMatch();
+  }
+
+  function validateMatch() {
+    const p1 = passwordInput.value;
+    const p2 = confirmInput.value;
+
+    if (!p2) {
+      matchStatusText.textContent = 'UNVERIFIED';
+      matchStatusText.className = 'text-outline';
+      matchIcon.textContent = 'pending';
+      matchIcon.className = 'material-symbols-outlined text-[16px] text-outline';
+      matchDescription.textContent = 'Awaiting identical key matching';
+      matchChip.textContent = 'IDLE';
+      matchChip.className = 'font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-outline uppercase';
+      return;
+    }
+
+    if (p1 === p2 && p1.length > 0) {
+      matchStatusText.textContent = 'SYNCHRONIZED';
+      matchStatusText.className = 'text-primary-container font-bold';
+      matchIcon.textContent = 'verified';
+      matchIcon.className = 'material-symbols-outlined text-[16px] text-primary-container';
+      matchDescription.textContent = 'Key entropy verified and matched';
+      matchChip.textContent = 'SECURE';
+      matchChip.className = 'font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-primary-container/20 text-primary-container uppercase font-bold shadow-[0_0_8px_rgba(0,240,255,0.4)]';
+    } else {
+      matchStatusText.textContent = 'MISMATCH';
+      matchStatusText.className = 'text-error font-bold';
+      matchIcon.textContent = 'error';
+      matchIcon.className = 'material-symbols-outlined text-[16px] text-error';
+      matchDescription.textContent = 'Telemetry key mismatch detected';
+      matchChip.textContent = 'ERR';
+      matchChip.className = 'font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-error-container text-error uppercase font-bold';
+    }
+  }
+
+  function validateEmail() {
+    const val = emailInput.value.trim();
+    const corporateRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    if (corporateRegex.test(val)) {
+      emailValidIcon.classList.remove('hidden');
+      emailValidIcon.classList.add('text-primary-container');
+      domainIndicator.textContent = 'DOMAIN OK';
+      domainIndicator.className = 'text-primary-container font-medium';
+    } else {
+      if (val.length > 0) {
+        domainIndicator.textContent = 'INVALID DOMAIN';
+        domainIndicator.className = 'text-error font-medium';
+        emailValidIcon.classList.add('hidden');
+      } else {
+        domainIndicator.textContent = 'DOMAIN REQ.';
+        domainIndicator.className = 'text-outline';
+        emailValidIcon.classList.add('hidden');
+      }
+    }
+  }
+
+  function togglePassVisibility(id, btn) {
+    const input = document.getElementById(id);
+    const icon = btn.querySelector('.material-symbols-outlined');
+    if (input.type === 'password') {
+      input.type = 'text';
+      icon.textContent = 'visibility_off';
+    } else {
+      input.type = 'password';
+      icon.textContent = 'visibility';
+    }
+  }
+
+  passwordInput.addEventListener('input', updateStrengthMeter);
+  confirmInput.addEventListener('input', validateMatch);
+  emailInput.addEventListener('input', validateEmail);
+
+  function handleRegistration() {
+    const p1 = passwordInput.value;
+    const p2 = confirmInput.value;
+    const banner = document.getElementById('feedback-banner');
+    const bannerText = document.getElementById('feedback-text');
+
+    if (p1 !== p2) {
+      banner.className = 'mt-6 p-4 rounded bg-error-container/30 text-error font-label-sm text-label-sm flex items-center gap-3';
+      bannerText.textContent = 'SEC_ERR: Credentials mismatch. Key hashes must resolve identically.';
+      banner.classList.remove('hidden');
+      return;
+    }
+
+    const { score } = calculateStrength(p1);
+    if (score < 3) {
+      banner.className = 'mt-6 p-4 rounded bg-error-container/30 text-error font-label-sm text-label-sm flex items-center gap-3';
+      bannerText.textContent = 'SEC_ERR: Password complexity failed minimum entropy threshold (min 3 criteria).';
+      banner.classList.remove('hidden');
+      return;
+    }
+
+    const btn = document.getElementById('deploy-btn');
+    btn.disabled = true;
+    btn.innerHTML = `<span class="material-symbols-outlined animate-spin text-xl">sync</span><span>SYNCHRONIZING SECURE ENCLAVE...</span>`;
+
+    setTimeout(() => {
+      btn.innerHTML = `<span class="material-symbols-outlined text-xl">done_all</span><span>CREDENTIALS ENCRYPTED & DEPLOYED</span>`;
+      banner.className = 'mt-6 p-4 rounded bg-primary-container/20 text-primary-container font-label-sm text-label-sm flex items-center gap-3 shadow-[0_0_16px_rgba(0,240,255,0.25)]';
+      bannerText.textContent = 'SUCCESS: Master operator profile initialized. Proceeding to Hardware Token challenge sequence...';
+      banner.classList.remove('hidden');
+    }, 1200);
+  }
+</script></main><footer class="w-full py-4 px-6 bg-surface-container-lowest"><div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-space-sm font-label-sm text-label-sm text-outline"><div class="flex items-center gap-space-md"><span>ENCRYPTION: AES-256</span><span>BIOMETRIC ZERO-TRUST</span><span>CLEARANCE: LEVEL 00</span></div><div class="flex items-center gap-space-md"><span>ISO 27001 AUDITED</span><span>SOC 2 TYPE II COMPLIANT</span></div></div><div class="w-full text-center py-2 font-label-sm text-label-sm text-outline">© 2026 NEXUS HUMANOID ROBOTICS INC.</div></footer></body></html>
